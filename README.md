@@ -5,7 +5,7 @@ Welcome to LoveLens, the perfect way to capture and share cherished memories fro
 LoveLens allows hosts to create a shared collage where guests can contribute their photos taken during the wedding festivities. Guests can simply scan a QR code provided by the host to access the shared collage, where they can upload their pictures, view others' photos, like them, and even download their favorites.
 
 ## Features
-## Host Features:
+### Host Features:
 Create Collage: Hosts can easily create a shared collage for their wedding event.
 Generate QR Code: Love Lens generates a unique QR code for each collage, making it simple for guests to access and contribute.
 Pin Favorite Photos: Hosts can pin their favorite photo to the top of the collage, ensuring it's prominently displayed.
