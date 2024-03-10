@@ -33,4 +33,4 @@ Backend: Node.js, Express.js
 Database: Firebase Firestore
 
 ## Documentation and Diagrams
-System Design: [Draw.io](Draw.io)
+System Design: [Draw.io](https://app.diagrams.net/)
