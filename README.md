@@ -31,3 +31,6 @@ Love Lens is built using modern web technologies, ensuring a seamless and user-f
 Frontend: Angular.js w/ Tailwind
 Backend: Node.js, Express.js
 Database: Firebase Firestore
+
+## Documentation and Diagrams
+System Design: [Draw.io](Draw.io)
