@@ -34,3 +34,4 @@ Database: Firebase Firestore
 
 ## Documentation and Diagrams
 System Design: [Draw.io](https://app.diagrams.net/)
+Frontend Design: [Love Lens Figma](https://www.figma.com/file/ECq4bvCoNp45rXliGLUw4F/LoveLens?type=design&node-id=0%3A1&mode=design&t=GaI182rt5yo5vQUU-1)
