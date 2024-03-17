@@ -1,0 +1,33 @@
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #EDAEC0;
+    color: #77252A;
+    padding-left: 40px;
+    height: 100px;
+    font-family: "Kodchasan", sans-serif;
+}
+
+.navbarOpts {
+    display: flex;
+    flex-direction: row;
+    padding-right: 40px;
+    padding-left: 40px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+}
+
+.prodName {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.welcomeuser {
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: kodchasan;
+    src: url("../../fonts/Kodchasan-Regular.ttf");
+}

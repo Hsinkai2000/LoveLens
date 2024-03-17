@@ -1,0 +1,118 @@
+.loginPageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 45%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.loginSectionContainer {
+    display: flex;
+    flex-direction: column;
+    color: #77252A;
+    font-family: "Kodchasan", sans-serif;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #77252A;
+    font-family: "Kodchasan", sans-serif;
+    gap: 180px;
+}
+
+.loginSectionContainer h1 {
+    font-size: 30px;
+}
+
+.emptyContainer {
+    height: 80px;
+}
+
+.prodName {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.loveLens {
+    text-align: center;
+    height: 80px;
+}
+
+input {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #77252A;
+    outline: none;
+    font-size: 18px;
+}
+
+.loginForm {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    font-size: 18px;
+    width: 320px;
+}
+
+.emailContainer{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    color: #77252A;
+    gap: 20px;
+}
+
+.passwordContainer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    color: #77252A;
+    gap: 20px;
+}
+
+.otherLogins {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.hrContainer {
+    display: flex;
+    align-items: center;
+}
+
+.hrContainer hr { 
+    width: 50px;
+    border: 1px solid #77252A;
+}
+
+.loginButton {
+    font-weight: bold;
+    color: white;
+    background-color: #EDAEC0;
+    border: none;
+    font-family: "Kodchasan", sans-serif;
+    height: 40px;
+    width: 140px;
+    border-radius: 8px;
+}
+
+.googleLoginButton {
+    font-weight: bold;
+    color: white;
+    background-color: #EDAEC0;
+    border: none;
+    font-family: "Kodchasan", sans-serif;
+    height: 40px;
+    width: 100%;
+    border-radius: 8px;
+}
+
