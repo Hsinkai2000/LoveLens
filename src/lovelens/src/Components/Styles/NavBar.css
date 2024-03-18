@@ -11,7 +11,7 @@
 .navbarOpts {
     display: flex;
     flex-direction: row;
-    padding-right: 40px;
+    padding-right: 100px;
     padding-left: 40px;
     justify-content: flex-end;
     align-items: center;
