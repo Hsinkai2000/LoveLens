@@ -1,0 +1,84 @@
+.contentContainer {
+    color: #77252A;
+    font-family: "Kodchasan", sans-serif;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 100px;
+}
+
+.contentContainer hr {
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid #77252A;
+}
+
+.headerSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.descSection span {
+    font-size: 18px;
+}
+
+.addSection {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.addSection .emptyContainer{
+    padding-top: 70px;
+}
+
+.addSection span {
+    font-size: 44px;
+    font-weight: bold;
+}
+
+.roomTable {
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    border-collapse: collapse;
+}
+
+.roomTable .tableHeaders {
+    background-color: #EDAEC0;
+    border-bottom: 0px;
+}
+
+.roomTable tr { 
+    border-bottom: 1px solid #77252A;
+}
+
+.roomTable .actionHeader {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.roomTable .actions {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.roomTable .actions a {
+    color: #77252A;
+    padding-right: 10px;
+}
+
+.roomTable tr {
+    height: 40px;
+}
+
+.roomTable td {
+    padding-left: 10px;
+}
+
+.roomTable th {
+    padding-left: 10px;
+}
+
