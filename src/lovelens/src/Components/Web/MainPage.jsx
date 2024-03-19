@@ -6,7 +6,7 @@ import tape2 from '../../images/tape.svg'
 
 export default function MainPage() {
     return(
-        <div className='contentContainer'>
+        <div className='contentContainerMain'>
             <div className='roomDetails'>
                 <div className='joinRoom'>
                     <h1>LOVE LENS</h1>
