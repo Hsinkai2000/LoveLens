@@ -16,11 +16,11 @@ export default function Login() {
                         <form className='loginForm'>
                             <div className='emailContainer'>
                                 <label>Email</label>
-                                <input type='email' required></input>
+                                <input type='email'></input>
                             </div>
                             <div className='passwordContainer'>
                                 <label>Password</label>
-                                <input type='password' required></input>
+                                <input type='password'></input>
                             </div>
                             <button className='loginButton'>LOGIN/SIGNUP</button>
                             <div className='otherLogins'>

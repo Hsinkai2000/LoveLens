@@ -5,14 +5,14 @@ export default function AdminDashboard() {
     return(
         <div>
             <NavBar></NavBar>
-            <div className='contentContainer'>
+            <div className='contentContainerAdmin'>
                 <div className='headerSection'>
                     <div className='descSection'>
                         <h1>Manage Collages</h1>
                         <span>Create a room for image collage. Engage your audience effortlessly!</span>
                     </div>
                     <div className='addSection'>
-                        <div className='emptyContainer'></div>
+                        <div className='emptyContainerAdmin'></div>
                         <span>&#43;</span>
                     </div>
                 </div>

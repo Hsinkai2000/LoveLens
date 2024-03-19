@@ -1,4 +1,4 @@
-.contentContainer {
+.contentContainerAdmin {
     color: #77252A;
     font-family: "Kodchasan", sans-serif;
     padding-left: 40px;
@@ -6,7 +6,7 @@
     padding-right: 100px;
 }
 
-.contentContainer hr {
+.contentContainerAdmin hr {
     margin-top: 10px;
     width: 100%;
     border: 1px solid #77252A;
@@ -30,7 +30,7 @@
     padding-left: 20px;
 }
 
-.addSection .emptyContainer{
+.addSection .emptyContainerAdmin{
     padding-top: 70px;
 }
 

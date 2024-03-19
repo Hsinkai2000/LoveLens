@@ -1,4 +1,4 @@
-.contentContainer {
+.contentContainerMain {
     color: #77252A;
     font-family: "Kodchasan", sans-serif;
     padding-right: 100px;
@@ -6,7 +6,7 @@
     flex-direction: row;
 }
 
-.contentContainer .roomDetails {
+.contentContainerMain .roomDetails {
     font-weight: bold;
     padding-top: 10px;
     padding-left: 40px;
@@ -19,17 +19,17 @@
     justify-content: space-between;
 }
 
-.contentContainer .roomDetails .joinRoom {
+.contentContainerMain .roomDetails .joinRoom {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-.contentContainer .roomDetails p {
+.contentContainerMain .roomDetails p {
     font-size: 18px;
 }
 
-.contentContainer .roomDetails img {
+.contentContainerMain .roomDetails img {
     margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
@@ -37,21 +37,21 @@
     width: 250px;
 }
 
-.contentContainer .roomDetails .roomCode {
+.contentContainerMain .roomDetails .roomCode {
     font-size: 24px;
     text-align: center;
 }
 
-.contentContainer .roomDetails .participants {
+.contentContainerMain .roomDetails .participants {
     padding-bottom: 10px;
 }
 
-.contentContainer .roomDetails .participantCount {
+.contentContainerMain .roomDetails .participantCount {
     font-size: 24px;
     text-align: center;
 }
 
-.contentContainer .photoCollage {
+.contentContainerMain .photoCollage {
     margin-top: 100px;
     flex-grow: 1;
     display: grid;
@@ -63,24 +63,24 @@
     justify-items: center;
 }
 
-.contentContainer .photoCollage .imageBox {
+.contentContainerMain .photoCollage .imageBox {
     height: auto;
     width: auto;
 }
 
-.contentContainer .photoCollage .wedpic {
+.contentContainerMain .photoCollage .wedpic {
     position: absolute;
     z-index: 1;
 }
 
-.contentContainer .photoCollage .tape1 {
+.contentContainerMain .photoCollage .tape1 {
     position: relative;
     z-index: 2;
     top: -30px;
     left: -30px;
 }
 
-.contentContainer .photoCollage .tape2 {
+.contentContainerMain .photoCollage .tape2 {
     position: relative;
     z-index: 3;
     top: 230px;
