@@ -3,6 +3,7 @@ import { NavigationPaths } from "./NavigationPaths"
 import Login from '../Web/Login';
 import MainPage from '../Web/MainPage';
 import AdminDashboard from '../Web/AdminDashboard';
+import ManageCollage from "../Web/ManageCollage";
 
 export default function MainRoutes() {
     return(
@@ -10,6 +11,7 @@ export default function MainRoutes() {
             <Route path={NavigationPaths.defaultPath} element={<Login/>}></Route>
             <Route path={NavigationPaths.mainPath} element={<MainPage/>}></Route>
             <Route path={NavigationPaths.adminDashboardPath} element={<AdminDashboard/>}></Route>
+            <Route path={NavigationPaths.manageCollage} element={<ManageCollage/>}></Route>
         </Routes>
     )
 }
