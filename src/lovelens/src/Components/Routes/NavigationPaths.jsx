@@ -3,5 +3,6 @@ export const NavigationPaths = {
     registerPath: "/register",
     mainPath: "/main",
     adminDashboardPath: "/admindashboard",
-    manageCollage: "/managecollage"
+    manageCollage: "/managecollage",
+    inputName: "/inputname",
 }
