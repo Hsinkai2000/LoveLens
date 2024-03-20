@@ -1,14 +1,20 @@
-//import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import '../Styles/NavBar.css'
+import { NavigationPaths } from './NavigationPaths'
 
 const navigationConfig = [
     {
+        routeName: "Admin Dashboard",
+        link: NavigationPaths.adminDashboardPath,
+    },
+    {
         routeName: "Logout",
+        link: NavigationPaths.defaultPath,
     }
 ]
 
 export default function NavBar() {
-    //const navigation = useNavigate();
+    const navigation = useNavigate();
 
     return(
         <div className='navbarContainer'>
@@ -17,7 +23,7 @@ export default function NavBar() {
                 <p className='welcomeuser'>Hi, Jason</p>
                 {navigationConfig.map((item, index) => {
                     return (
-                        <p>{item.routeName}</p>
+                        <button onClick={()=>navigation(item.link)}>{item.routeName}</button>
                     )
                 })}
             </div>

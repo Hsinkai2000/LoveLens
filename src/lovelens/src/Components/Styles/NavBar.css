@@ -18,6 +18,19 @@
     gap: 40px;
 }
 
+.navbarOpts button {
+    font-size: 16px;
+    color: #77252A;
+    border: none;
+    background-color: transparent;
+    font-family: "Kodchasan", sans-serif;
+    cursor: pointer;
+}
+
+.navbarOpts button:hover {
+    text-decoration: underline;
+}
+
 .prodName {
     font-weight: bold;
     font-size: 32px;
