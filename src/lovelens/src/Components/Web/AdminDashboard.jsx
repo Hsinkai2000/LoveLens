@@ -32,10 +32,9 @@ export default function AdminDashboard() {
                             <td>50</td>
                             <td>19/05/2024</td>
                             <td className='actions'>
-                                <a href='http://localhost:3000'>Start</a>
-                                <a href='http://localhost:3000'>View</a>
-                                <a href='http://localhost:3000'>Edit</a>
-                                <a href='http://localhost:3000'>Delete</a>
+                                <a href='/main'>Start</a>
+                                <a href='/managecollage'>Manage</a>
+                                <a href='/admindashboard'>Delete</a>
                             </td>
                         </tr>
                     </table>

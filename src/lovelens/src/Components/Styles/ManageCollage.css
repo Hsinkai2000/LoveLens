@@ -1,0 +1,132 @@
+.contentContainerManage {
+    color: #77252A;
+    font-family: "Kodchasan", sans-serif;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.management .headerSection {
+    display: flex;
+    flex-direction: row;
+    color: #77252A;
+    font-family: "Kodchasan", sans-serif;
+    padding-left: 40px;
+    padding-right: 100px;
+    justify-content: space-between;
+}
+
+.management .descSection span {
+    font-size: 18px;
+}
+
+.management hr {
+    margin-top: 10px;
+    border: 1px solid #77252A;
+    margin-left: 40px;
+    margin-right: 100px;
+}
+
+.management .actionsSection {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 100px;
+}
+
+.management .downloadCollage {
+    font-weight: bold;
+    color: white;
+    background-color: #77252A;
+    border: none;
+    font-family: "Kodchasan", sans-serif;
+    height: 40px;
+    width: 140px;
+    border-radius: 8px;
+}
+
+.management .actionButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.management .selectPhotos {
+    font-weight: bold;
+    color: white;
+    background-color: #EDAEC0;
+    border: none;
+    font-family: "Kodchasan", sans-serif;
+    height: 40px;
+    width: 140px;
+    border-radius: 8px;
+}
+
+.management .downloadPhotos {
+    font-weight: bold;
+    color: white;
+    background-color: #EDAEC0;
+    border: none;
+    font-family: "Kodchasan", sans-serif;
+    height: 40px;
+    width: 140px;
+    border-radius: 8px;
+}
+
+.management .deletePhotos {
+    font-weight: bold;
+    color: white;
+    background-color: #CC4B54;
+    border: none;
+    font-family: "Kodchasan", sans-serif;
+    height: 40px;
+    width: 140px;
+    border-radius: 8px;
+}
+
+.management .detailsSection {
+    margin-top: 60px;
+    font-size: 18px;
+    text-align: right;
+}
+
+.contentContainerManage .photos {
+    margin-top: 50px;
+    margin-right: 100px;
+    flex-grow: 1;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-auto-rows: 350px;
+    row-gap: 20px;
+    width: 100%;
+    height: 100vh;
+    justify-items: center;
+}
+
+.image {
+    height: auto;
+    width: auto;
+}
+
+.photos .wedpic {
+    position: absolute;
+    z-index: 1;
+}
+
+.photos .tape1 {
+    position: relative;
+    z-index: 2;
+    top: -30px;
+    left: -30px;
+}
+
+.photos .tape2 {
+    position: relative;
+    z-index: 3;
+    top: 230px;
+    left: 110px;
+}
+
