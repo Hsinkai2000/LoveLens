@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import '../Styles/NavBar.css'
 import { NavigationPaths } from './NavigationPaths'
+import { signOutUser } from "../../utils/firebase.utils"
 
 const navigationConfig = [
     {
@@ -15,6 +16,10 @@ const navigationConfig = [
 
 export default function NavBar() {
     const navigation = useNavigate();
+    const logoutHandler = () => {
+        signOutUser();
+        navigation(NavigationPaths.defaultPath);
+    }
 
     return(
         <div className='navbarContainer'>
@@ -23,7 +28,15 @@ export default function NavBar() {
                 <p className='welcomeuser'>Hi, Jason</p>
                 {navigationConfig.map((item, index) => {
                     return (
-                        <button onClick={()=>navigation(item.link)}>{item.routeName}</button>
+                        <button onClick={()=> 
+                            {
+                                if (item.link == NavigationPaths.defaultPath){
+                                    logoutHandler();
+                                }
+                                else{
+                                    navigation(NavigationPaths.adminDashboardPath);
+                                }
+                        }}>{item.routeName}</button>
                     )
                 })}
             </div>

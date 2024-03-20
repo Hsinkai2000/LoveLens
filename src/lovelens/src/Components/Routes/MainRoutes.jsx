@@ -12,6 +12,7 @@ export default function MainRoutes() {
             <Route path={NavigationPaths.mainPath} element={<MainPage/>}></Route>
             <Route path={NavigationPaths.adminDashboardPath} element={<AdminDashboard/>}></Route>
             <Route path={NavigationPaths.manageCollage} element={<ManageCollage/>}></Route>
+            <Route path={NavigationPaths.inputName} element={<inputName/>}></Route>
         </Routes>
     )
 }
