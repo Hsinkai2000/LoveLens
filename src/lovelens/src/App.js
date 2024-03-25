@@ -1,15 +1,26 @@
+import { BrowserView, MobileOnlyView } from 'react-device-detect';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import MainRoutes from './Components/Routes/MainRoutes';
+import EnterRoom from './Components/Mobile/EnterRoom';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <MobileOnlyView>
+        <EnterRoom></EnterRoom>
+      </MobileOnlyView>
+      <BrowserView>
+        <BrowserRouter>
           <MainRoutes></MainRoutes>
-      </BrowserRouter>
+        </BrowserRouter>
+      </BrowserView>
     </div>
   );
 }
 
 export default App;
+
+// <BrowserRouter>
+// <MainRoutes></MainRoutes>
+// </BrowserRouter>
