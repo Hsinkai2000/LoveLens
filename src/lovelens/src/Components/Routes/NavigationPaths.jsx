@@ -5,7 +5,9 @@ export const NavigationPaths = {
     mainPath: "/main",
     adminDashboardPath: "/admindashboard",
     manageCollage: "/managecollage",
+    
 
     //Client - Mobile
     enterRoomPath: "/enterroom",
+    inputName: '/inputname'
 }

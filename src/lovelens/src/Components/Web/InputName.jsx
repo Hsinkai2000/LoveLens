@@ -1,8 +1,7 @@
 import '../Styles/AdminDashboard.css';
 import NavBar from '../Routes/NavBar';
-import { onAuthStateChangedListener } from '../../utils/firebase.utils.js';
+
 export default function AdminDashboard() {
-    console.log(onAuthStateChangedListener);
     return (
         <div>
             <NavBar></NavBar>

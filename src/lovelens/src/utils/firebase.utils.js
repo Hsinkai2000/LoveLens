@@ -96,11 +96,33 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) {
         return;
     }
-    return signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user);
+        return user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+    ;
 };
 
-export const signOutUser = async () => await signOut(auth);
+export const signOutUser = async () => await signOut(auth).then(() => {
+    // Sign-out successful.
+    console.log("User signed out");
+  }).catch((error) => {
+    // An error happened.
+  });
 
-export const onAuthStateChangedListener = (state) => {
-    return onAuthStateChanged(auth, state);
+export const onAuthStateChangedListener = () => {
+    const {user} = onAuthStateChanged(auth, (user) => {
+        if (user){
+            return user;
+        }
+    });
+    return user;
+    
 };
