@@ -1,7 +1,11 @@
 export const NavigationPaths = {
+    //Admin - Web
     defaultPath: "/",
     registerPath: "/register",
     mainPath: "/main",
     adminDashboardPath: "/admindashboard",
-    manageCollage: "/managecollage"
+    manageCollage: "/managecollage",
+
+    //Client - Mobile
+    enterRoomPath: "/enterroom",
 }

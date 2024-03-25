@@ -4,6 +4,7 @@ import Login from '../Web/Login';
 import MainPage from '../Web/MainPage';
 import AdminDashboard from '../Web/AdminDashboard';
 import ManageCollage from "../Web/ManageCollage";
+import EnterRoom from "../Mobile/EnterRoom";
 
 export default function MainRoutes() {
     return(
@@ -12,6 +13,9 @@ export default function MainRoutes() {
             <Route path={NavigationPaths.mainPath} element={<MainPage/>}></Route>
             <Route path={NavigationPaths.adminDashboardPath} element={<AdminDashboard/>}></Route>
             <Route path={NavigationPaths.manageCollage} element={<ManageCollage/>}></Route>
+            
         </Routes>
     )
 }
+
+// <Route path={NavigationPaths.enterRoomPath} element={<EnterRoom/>}></Route>
