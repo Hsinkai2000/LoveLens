@@ -9,6 +9,7 @@ export const NavigationPaths = {
 
     //Client - Mobile
     enterRoomPath: "/enterroom",
+    enterUsernamePath: "/enterusername",
     mobileMainPath: "/mobilemain",
     inputName: '/inputname'
 }

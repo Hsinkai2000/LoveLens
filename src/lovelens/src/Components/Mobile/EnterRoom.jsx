@@ -11,7 +11,7 @@ export default function EnterRoom() {
                 <div className='roomCode'>
                     <form className='codeSubmission'>
                         <input placeholder='Enter Room Code'></input>
-                        <div className='submitCode'><button className='submitRoom'>Submit</button></div>
+                        <div className='submitCode'><button className='submitRoom'>Enter Room</button></div>
                     </form>
                 </div>
             </div>
