@@ -4,7 +4,6 @@ import Login from '../Web/Login';
 import MainPage from '../Web/MainPage';
 import AdminDashboard from '../Web/AdminDashboard';
 import ManageCollage from "../Web/ManageCollage";
-import EnterRoom from "../Mobile/EnterRoom";
 
 export default function MainRoutes() {
     return (
