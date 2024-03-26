@@ -29,7 +29,7 @@
     font-size: 18px;
 }
 
-.contentContainerMain .roomDetails img {
+.contentContainerMain .roomDetails .qrcode {
     margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
