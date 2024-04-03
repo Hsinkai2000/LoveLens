@@ -30,7 +30,7 @@ export default function NavBar() {
                     return (
                         <button
                             onClick={() => {
-                                if (item.link == NavigationPaths.defaultPath) {
+                                if (item.link === NavigationPaths.defaultPath) {
                                     logoutHandler();
                                 } else {
                                     navigation(
