@@ -22,6 +22,8 @@ export default function AdminDashboard() {
         }
     };
 
+    const token = "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjgwNzhkMGViNzdhMjdlNGUxMGMzMTFmZTcxZDgwM2I5MmY3NjYwZGYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbG92ZWxlbnMtNTM1YmMiLCJhdWQiOiJsb3ZlbGVucy01MzViYyIsImF1dGhfdGltZSI6MTcxMjIxMDMzOSwidXNlcl9pZCI6IlQ5Tkg3dFNEUjloVklEQ09NVzBRVUpYRkFneTEiLCJzdWIiOiJUOU5IN3RTRFI5aFZJRENPTVcwUVVKWEZBZ3kxIiwiaWF0IjoxNzEyMjEwMzM5LCJleHAiOjE3MTIyMTM5MzksImVtYWlsIjoidGVzdGVyMTIzQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0ZXIxMjNAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.OQaFTHRpD5bTkcZh3zHZYNLgp__1y9hEyZpyYKT9VYlMoKoQoy44mthbgjDT-RegO4cxU-FdChMjFZMSlkPfAi2kQcqpAAHpBDfIMbvweWTfADweOe7LrqGEvVnFZ-A00ebTViYe8EQsXJB2U8lv7ZzhgxBeE_B4J_11z4rul29B4NcWBv8nYwaANxU5bFzz9p2MK2W7ng70-b3DAmy_9yX0q2CGTPkhJXcCf1MKEij7G3w9BPdy4GkNLLuEmCLJAh_p_isaMmODGo_IOmGd7Tg2-m49ecgza8Z0-jVcXtdayT-1i6J3RFN9hPF3xM1fpoeI4JP3Q-iLRokMmHKKtg"
+
     const createNewRoom = (e) => {
         e.preventDefault();
         console.log("createNewRoom")
@@ -33,7 +35,7 @@ export default function AdminDashboard() {
         axios.post("http://localhost:3000/api/room/", 
         JSON.stringify(newRoom),
         {headers:{
-            Authorization : "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImJhNjI1OTZmNTJmNTJlZDQ0MDQ5Mzk2YmU3ZGYzNGQyYzY0ZjQ1M2UiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbG92ZWxlbnMtNTM1YmMiLCJhdWQiOiJsb3ZlbGVucy01MzViYyIsImF1dGhfdGltZSI6MTcxMjE0NDIxMCwidXNlcl9pZCI6IlQ5Tkg3dFNEUjloVklEQ09NVzBRVUpYRkFneTEiLCJzdWIiOiJUOU5IN3RTRFI5aFZJRENPTVcwUVVKWEZBZ3kxIiwiaWF0IjoxNzEyMTQ0MjEwLCJleHAiOjE3MTIxNDc4MTAsImVtYWlsIjoidGVzdGVyMTIzQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0ZXIxMjNAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.M0S6hMYigihW2mRvmiGOWZkDMSysg-NNZMfqTO_wOe8nH2XslkygCvKyoMTPDwea701147uvWFatZ6SlV6S3U2VV_sQpMYs0q0ZK-zyNvgcnVq7Lkyvetg8Xoj0Tds11ZFWgbHvbF7jCXC903T44jGcF6NwDCui_ThUbEl5yaYLMtDFN72-15D_Z0gH1EFjSuEDRr0XSnq2wTevW12Q9B55AQitC9LELsa0HOzT4Q5aA4aZt0F0Bt8wJ7lqS024Hi69GuskD9HnU0zsrwj75FEHR2LL1AgYMvkPnTGIVGrO8HUKNgBE-6Ov_Oa5e5p1Y93e4Amqc4tiIgMz86-Gdmw",
+            Authorization : token,
             "Content-Type" : "application/json"
         }})
         .then((res) => {
@@ -66,7 +68,7 @@ export default function AdminDashboard() {
     const fetchData = async () => {
         axios.get("http://localhost:3000/api/room/T9NH7tSDR9hVIDCOMW0QUJXFAgy1", 
         {headers:{
-            Authorization : "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImJhNjI1OTZmNTJmNTJlZDQ0MDQ5Mzk2YmU3ZGYzNGQyYzY0ZjQ1M2UiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbG92ZWxlbnMtNTM1YmMiLCJhdWQiOiJsb3ZlbGVucy01MzViYyIsImF1dGhfdGltZSI6MTcxMjE0NDIxMCwidXNlcl9pZCI6IlQ5Tkg3dFNEUjloVklEQ09NVzBRVUpYRkFneTEiLCJzdWIiOiJUOU5IN3RTRFI5aFZJRENPTVcwUVVKWEZBZ3kxIiwiaWF0IjoxNzEyMTQ0MjEwLCJleHAiOjE3MTIxNDc4MTAsImVtYWlsIjoidGVzdGVyMTIzQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0ZXIxMjNAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.M0S6hMYigihW2mRvmiGOWZkDMSysg-NNZMfqTO_wOe8nH2XslkygCvKyoMTPDwea701147uvWFatZ6SlV6S3U2VV_sQpMYs0q0ZK-zyNvgcnVq7Lkyvetg8Xoj0Tds11ZFWgbHvbF7jCXC903T44jGcF6NwDCui_ThUbEl5yaYLMtDFN72-15D_Z0gH1EFjSuEDRr0XSnq2wTevW12Q9B55AQitC9LELsa0HOzT4Q5aA4aZt0F0Bt8wJ7lqS024Hi69GuskD9HnU0zsrwj75FEHR2LL1AgYMvkPnTGIVGrO8HUKNgBE-6Ov_Oa5e5p1Y93e4Amqc4tiIgMz86-Gdmw",
+            Authorization : token,
             "Content-Type" : "application/json"
         }})
         .then(res => {
