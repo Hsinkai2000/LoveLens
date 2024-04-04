@@ -132,7 +132,7 @@ export default function AdminDashboard() {
                                     <td>{room.num_of_pics}</td>
                                     <td>{dateFormat(room.creation_date, "dd/mm/yyyy")}</td>
                                     <td className="actions">
-                                        <a href="/main" rel="noopener" target="_blank">
+                                        <a href={"/main?room=" + room.room_code} rel="noreferrer" target="_blank">
                                             Start
                                         </a>
                                         <a href="/managecollage">Manage</a>
