@@ -96,18 +96,29 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) {
         return;
     }
-    return signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        console.log(user);
-        return user;
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
+
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        console.log(userCredential.user);
+        return userCredential.user; 
+    } catch (error) {
         const errorMessage = error.message;
-      });
-    ;
+        return errorMessage; 
+    }
+
+    // await signInWithEmailAndPassword(auth, email, password)
+    //     .then((userCredential) => {
+    //         // Signed in
+    //         const user = userCredential.user;
+    //         console.log(user);
+    //         return user;
+    //         // ...
+    //     })
+    //     .catch((error) => {
+    //         const errorCode = error.code;
+    //         const errorMessage = error.message;
+    //         return errorMessage;
+    //     });
 };
 
 export const signOutUser = async () => await signOut(auth).then(() => {
