@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import '../Styles/NavBar.css';
 import { NavigationPaths } from './NavigationPaths';
 import { signOutUser } from '../../utils/firebase.utils';
+import { LOCALSTORAGEKEY } from '../../LocalStorageKeys';
 
 const navigationConfig = [
     {
@@ -16,6 +17,14 @@ const navigationConfig = [
 
 export default function NavBar() {
     const navigation = useNavigate();
+
+    let displayName = JSON.parse(localStorage.getItem(LOCALSTORAGEKEY.login_details)).displayName;
+    const email = JSON.parse(localStorage.getItem(LOCALSTORAGEKEY.login_details)).email;
+
+    if (displayName == null) {
+        displayName = email.split("@")[0];
+    }
+
     const logoutHandler = () => {
         signOutUser();
         navigation(NavigationPaths.defaultPath);
@@ -25,7 +34,7 @@ export default function NavBar() {
         <div className="navbarContainer">
             <p className="prodName">LOVE LENS</p>
             <div className="navbarOpts">
-                <p className="welcomeuser">Hi, Jason</p>
+                <p className="welcomeuser">Hi, {displayName}</p>
                 {navigationConfig.map((item, index) => {
                     return (
                         <button

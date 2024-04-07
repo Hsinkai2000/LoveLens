@@ -1,0 +1,55 @@
+.enterRoomContainer {
+    display: flex;
+    flex-direction: column;
+    color: #77252A;
+    font-family: "Kodchasan", sans-serif;
+    background-color: #F8CDC9;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+.enterRoomContent {
+    padding-top: 20px;
+}
+
+.enterRoomContent .wedpic {
+    scale: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.enterRoomContent .loveLens {
+    display: flex;
+    justify-content: center;
+}
+
+.enterRoomContent .roomCode {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.enterRoomContent .codeSubmission {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.enterRoomContent .submitCode {
+    display: flex;
+    justify-content: center;
+}
+
+.enterRoomContent button {
+    font-weight: bold;
+    color: white;
+    background-color: #EDAEC0;
+    border: none;
+    font-family: "Kodchasan", sans-serif;
+    height: 40px;
+    width: 140px;
+    border-radius: 8px;
+    font-size: 18px;
+}
