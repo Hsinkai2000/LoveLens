@@ -107,26 +107,15 @@
 }
 
 .image {
-    height: auto;
-    width: auto;
+    height: 330px;
+    width: 330px;
 }
 
 .photos .wedpic {
     position: absolute;
     z-index: 1;
-}
-
-.photos .tape1 {
-    position: relative;
-    z-index: 2;
-    top: -30px;
-    left: -30px;
-}
-
-.photos .tape2 {
-    position: relative;
-    z-index: 3;
-    top: 230px;
-    left: 110px;
+    height: 330px;
+    width: 330px;
+    object-fit: fill;
 }
 
