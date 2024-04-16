@@ -140,7 +140,7 @@ export default function AdminDashboard() {
                                         <a href={"/main?room=" + room.room_code} rel="noreferrer" target="_blank">
                                             Start
                                         </a>
-                                        <a href="/managecollage">Manage</a>
+                                        <a href={"/managecollage?room=" + room.room_code + "?name=" + room.name}>Manage</a>
                                         <a href="/admindashboard">Delete</a>
                                     </td>
                                 </tr>

@@ -38,6 +38,7 @@ export default function NavBar() {
                 {navigationConfig.map((item, index) => {
                     return (
                         <button
+                            key={item.routeName}
                             onClick={() => {
                                 if (item.link === NavigationPaths.defaultPath) {
                                     logoutHandler();
