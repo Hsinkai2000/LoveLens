@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom';
 
 export default function MainPage() {
 
+    const [imageData, setImageData] = useState([]);
     const [data, setData] = useState([])
     const location = useLocation();
     const rCode = location.search.split("=")[1]
@@ -39,6 +40,21 @@ export default function MainPage() {
         .catch((err) => {
             console.log(err.message);
         });   
+
+        const image_api = ("http://localhost:3000/api/image/" + rCode);
+        axios.get(image_api,
+        {headers:{
+            "Content-Type" : "application/json"
+        }})
+        .then(image_res => {
+            const {room} = image_res.data;
+            setImageData(room);
+
+            console.log("Image Data: " + imageData);
+        })
+        .catch((err) => {
+            console.log(err.message);
+        }); 
     };
 
     useEffect(() => {
@@ -66,36 +82,15 @@ export default function MainPage() {
                 </div>
             </div>
             <div className="photoCollage">
-                <div className="imageBox">
-                    <img className="wedpic" src={wed1} alt="Wedding 1" />
-                    <img className="tape1" src={tape1} alt="Tape" />
-                    <img className="tape2" src={tape2} alt="Tape" />
-                </div>
-                <div className="imageBox">
-                    <img className="wedpic" src={wed1} alt="Wedding 1" />
-                    <img className="tape1" src={tape1} alt="Tape" />
-                    <img className="tape2" src={tape2} alt="Tape" />
-                </div>
-                <div className="imageBox">
-                    <img className="wedpic" src={wed1} alt="Wedding 1" />
-                    <img className="tape1" src={tape1} alt="Tape" />
-                    <img className="tape2" src={tape2} alt="Tape" />
-                </div>
-                <div className="imageBox">
-                    <img className="wedpic" src={wed1} alt="Wedding 1" />
-                    <img className="tape1" src={tape1} alt="Tape" />
-                    <img className="tape2" src={tape2} alt="Tape" />
-                </div>
-                <div className="imageBox">
-                    <img className="wedpic" src={wed1} alt="Wedding 1" />
-                    <img className="tape1" src={tape1} alt="Tape" />
-                    <img className="tape2" src={tape2} alt="Tape" />
-                </div>
-                <div className="imageBox">
-                    <img className="wedpic" src={wed1} alt="Wedding 1" />
-                    <img className="tape1" src={tape1} alt="Tape" />
-                    <img className="tape2" src={tape2} alt="Tape" />
-                </div>
+                {imageData.map((image) => (
+                    <div className="imageBox">
+                        <a href={image} rel="noreferrer" target="_blank">
+                            <img className="wedpic" src={image} alt="Wedding 1" />
+                        </a>
+                        <img className="tape1" src={tape1} alt="Tape" />
+                        <img className="tape2" src={tape2} alt="Tape" />
+                    </div>
+                ))}
             </div>
         </div>
     );
