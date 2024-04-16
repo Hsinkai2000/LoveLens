@@ -71,6 +71,9 @@
 .contentContainerMain .photoCollage .wedpic {
     position: absolute;
     z-index: 1;
+    height: 330px;
+    width: 330px;
+    object-fit: fill;
 }
 
 .contentContainerMain .photoCollage .tape1 {
