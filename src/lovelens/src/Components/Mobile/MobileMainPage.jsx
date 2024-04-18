@@ -13,12 +13,11 @@ export default function MobileMainPage() {
     const location = useLocation();
     const rCode = location.search.split("=")[1].split("?")[0];
 
-    const [image, setImage] = useState(null);
-    const [crop, setCrop] = useState({ aspect: 16 / 9 });
+    // const [image, setImage] = useState(null);
+    // const [crop, setCrop] = useState({ aspect: 16 / 9 });
 
     const fetchData = async () => {
         const image_api = ("http://192.168.2.119:3000/api/image/" + rCode);
-        console.log("fetching")
         await axios.get(image_api,
         {headers:{
             "Content-Type" : "application/json"
@@ -26,8 +25,6 @@ export default function MobileMainPage() {
         .then(image_res => {
             const {room} = image_res.data;
             setImageData(room);
-
-            console.log("Image Data: " + imageData);
         })
         .catch((err) => {
             console.log(err.message);
@@ -35,9 +32,29 @@ export default function MobileMainPage() {
     };
 
     useEffect(() => {
-        console.log("testing")
         fetchData();
     }, []);
+
+    const fileUpload = event => {
+        var formData = new FormData();
+
+        formData.append("room_code", rCode);
+        formData.append("image", event.target.files[0]);
+
+        axios.post("http://192.168.2.119:3000/api/image/upload", 
+        formData,
+        {headers:{
+            "Content-Type" : "multipart/form-data"
+        }})
+        .then((res) => {
+            console.log("image uploaded");
+            window.location.reload();
+         })
+         .catch((err) => {
+            console.log(err.message);
+         });    
+
+    }
     
     return(
         <div className='mobileMainContainer' style={{}}>
@@ -47,7 +64,7 @@ export default function MobileMainPage() {
             </div>
             <div className='mobileMainContent'>
                 <div className='photoList'>
-                {imageData.map((image) => (
+                {[...imageData].reverse().map((image) => (
                     <div className='wrapImage'>
                         <div className="imageBox">
                             <img className="wedpic" src={image} key={image} alt="Wedding 1" />
@@ -60,16 +77,17 @@ export default function MobileMainPage() {
             </div>
             <div>
                 <button className='addPicButton'>&#43;</button>
-                <input className='chooseFile' type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
-                {image && (
-                    <ReactCrop
-                      src={URL.createObjectURL(image)} // Create temporary URL for selected image
-                      onImageLoaded={setCrop} // Update crop state on image load (optional)
-                      onChange={setCrop}
-                      style={{ maxHeight: 400 }} // Optional: Set styling for the cropping area
-                    />
-                )}
+                <input className='chooseFile' type="file" accept="image/*" onChange={fileUpload} />
             </div>
         </div>
     )
 }
+
+// {image && (
+//     <ReactCrop
+//       src={URL.createObjectURL(image)} // Create temporary URL for selected image
+//       onImageLoaded={setCrop} // Update crop state on image load (optional)
+//       onChange={setCrop}
+//       style={{ maxHeight: 400 }} // Optional: Set styling for the cropping area
+//     />
+// )}
