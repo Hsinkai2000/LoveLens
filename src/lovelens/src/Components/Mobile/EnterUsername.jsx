@@ -1,7 +1,18 @@
 import '../Styles/EnterUsername.css'
 import weddingpic from '../../images/weddingpic.png'
+import { useLocation, useNavigate } from 'react-router-dom';
+import { NavigationPaths } from '../Routes/NavigationPaths';
 
 export default function EnterUsername() {
+
+    const location = useLocation();
+    const rCode = location.search.split("=")[1]
+    const navigation = useNavigate();
+
+    const submitUsername = (e) => {
+        e.preventDefault();
+        navigation(NavigationPaths.mobileMainPath + "?room=" + rCode + "?username=test");
+    }
 
     return(
         <div className='enterUsernameContainer'>
@@ -9,10 +20,10 @@ export default function EnterUsername() {
                 <div className='loveLens'><p className='prodName'>LOVE LENS</p></div>
                 <div className='wedpic'><img src={weddingpic} alt="Wedding Couple"/></div>
                 <div className='roomUsername'>
-                    <div><p>Room Code: 48801</p></div>
+                    <div><p>Room Code: {rCode}</p></div>
                     <form className='usernameSubmission'>
                         <input placeholder='Enter Username'></input>
-                        <div className='submitUsername'><button className='submitName'>Submit</button></div>
+                        <div className='submitUsername'><button className='submitName' onClick={submitUsername}>Submit</button></div>
                     </form>
                 </div>
             </div>

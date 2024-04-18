@@ -1,6 +1,5 @@
 import '../Styles/MainPage.css';
 //import qrcode from '../../images/qrcode.png';
-import wed1 from '../../images/wed1.png';
 import tape1 from '../../images/tape.svg';
 import tape2 from '../../images/tape.svg';
 import QRCode from 'react-qr-code';
@@ -70,7 +69,7 @@ export default function MainPage() {
                         Welcome to Jason's Room, Feel Free to add your pictures!
                     </p>
                     <p className="roomCode">Room Code: {rCode}</p>
-                    <QRCode className='qrcode' delay={300} value={'localhost:3000/enterusername?room=' + rCode} onError={handleError} onScan={handleScan}/>
+                    <QRCode className='qrcode' delay={300} value={'localhost:3001/enterusername?room=' + rCode} onError={handleError} onScan={handleScan}/>
                     <span>
                         Get in on the fun!
                         <br />
