@@ -68,6 +68,7 @@
     width: 250px;
     position: absolute;
     z-index: 1;
+    object-fit: fill;
 }
 
 .mobileMainContent .photoList .tape1 {
@@ -103,4 +104,24 @@
     display: inline-block;
     font-size: 50px;
     margin: 4px 2px;
+}
+
+.chooseFile {
+    position: fixed;
+    right: 5%;
+    bottom: 3%;
+    z-index: 100;
+    color: #CC4B54;
+    font-weight:bolder;
+    background-color: #EDAEC0;
+    border: none;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 50px;
+    margin: 4px 2px;
+    opacity: 0;
 }
