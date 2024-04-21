@@ -77,7 +77,7 @@ export default function MainPage() {
                     </span>
                 </div>
                 <div className="participants">
-                    <p className="participantCount">Participants: 9</p>
+                    <p className="participantCount"></p>
                 </div>
             </div>
             <div className="photoCollage">
