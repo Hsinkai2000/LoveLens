@@ -10,8 +10,10 @@ import { LOCALSTORAGEKEY } from '../../LocalStorageKeys.jsx';
 export default function AdminDashboard() {
     console.log(onAuthStateChangedListener);
 
-    const [name, setName] = useState('')
-    const [data, setData] = useState([])
+    const [name, setName] = useState('');
+    const [data, setData] = useState([]);
+    const [index, setIndex] = useState();
+    const [delName, setDelName] = useState('');
 
     const enterRoomName = async () => {
         console.log("enterRoomName")
@@ -58,9 +60,52 @@ export default function AdminDashboard() {
         window.location.reload();
     };
 
+    const deleteConfirmation = (e, index) => {
+        e.preventDefault();
+        console.log("deleteConfirmation")
+        setIndex(index);
+        setDelName(data[index].name);
+        var x = document.getElementsByClassName("confirmDeletePopup");
+        var y = document.getElementsByClassName("adminDashboardContainer");
+        if (x[0].style.display === "none") {
+            x[0].style.display = "block";
+            y[0].style.filter = "blur(5px)";
+        }
+    };
+
+    const deleteRoom = (e, index) => {
+        e.preventDefault();
+        console.log("deleteRoom");
+        
+        axios.delete("http://localhost:3000/api/room/",
+        {headers:{
+            Authorization : token,
+            "Content-Type" : "application/json"
+        },
+        data: {
+            "room_code": data[index].room_code
+        }})
+        .then((res) => {
+            console.log(res.data);
+            window.location.reload();
+         })
+         .catch((err) => {
+            console.log(err.message);
+         });
+    };
+
     const cancelCreation = async () => {
-        console.log("createNewRoom")
         var x = document.getElementsByClassName("roomNamePopup");
+        var y = document.getElementsByClassName("adminDashboardContainer");
+
+        if (x[0].style.display === "block") {
+            x[0].style.display = "none";
+            y[0].style.filter = "none";
+        }
+    };
+
+    const cancelDelete = async () => {
+        var x = document.getElementsByClassName("confirmDeletePopup");
         var y = document.getElementsByClassName("adminDashboardContainer");
 
         if (x[0].style.display === "block") {
@@ -104,6 +149,17 @@ export default function AdminDashboard() {
                 <br></br>
                 <button className='roomCreation' onClick={createNewRoom}>Create Room</button>
             </div>
+            <div style={{display: 'none'}} className='confirmDeletePopup'>
+                <p>Confirm the deletion of room:</p>
+                <p>{delName}?</p>
+                <br></br>
+                <p>Note that after deletion, the room pictures can no longer be retrieved.</p>
+                <br></br>
+                <div className='confirmationButtons'>
+                    <button className='roomDelete' onClick={(e) => deleteRoom(e, index)}>Confirm</button>
+                    <button className='cancelDelete' onClick={cancelDelete}>Cancel</button>
+                </div>
+            </div>
             <div style={{}} className='adminDashboardContainer'>
                 <NavBar></NavBar>
                 <div className="contentContainerAdmin">
@@ -130,7 +186,7 @@ export default function AdminDashboard() {
                                 <th>Creation Date</th>
                                 <th className="actionHeader">Action</th>
                             </tr>
-                            {data.map((room) => (
+                            {data.map((room, index) => (
                                 <tr>
                                     <td>{room.name}</td>
                                     <td>{room.room_code}</td>
@@ -141,7 +197,7 @@ export default function AdminDashboard() {
                                             Start
                                         </a>
                                         <a href={"/managecollage?room=" + room.room_code + "?name=" + room.name}>Manage</a>
-                                        <a href="/admindashboard">Delete</a>
+                                        <button key={index} onClick={(e) => deleteConfirmation(e, index)}>Delete</button>
                                     </td>
                                 </tr>
                             ))}
