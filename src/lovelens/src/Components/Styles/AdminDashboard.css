@@ -76,6 +76,16 @@
     padding-right: 10px;
 }
 
+.roomTable .actions button {
+    color: #77252A;
+    padding-right: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    font-family: "Kodchasan", sans-serif;
+    text-decoration-line: underline;
+}
+
 .roomTable tr {
     height: 40px;
 }
@@ -102,6 +112,55 @@
     border: 1px solid #77252A;
     font-size: 24px;
     z-index: 100;
+}
+
+.confirmDeletePopup {
+    color: #77252A;
+    width: 400px;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #EDAEC0;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 30%;
+    border: 1px solid #77252A;
+    font-size: 24px;
+    z-index: 100;
+}
+
+.confirmDeletePopup .roomDelete {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #77252A;
+    border: none;
+    font-family: "Kodchasan", sans-serif;
+    height: 40px;
+    width: 140px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.confirmDeletePopup .cancelDelete {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #CC4B54;
+    border: none;
+    font-family: "Kodchasan", sans-serif;
+    height: 40px;
+    width: 140px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.confirmDeletePopup .confirmationButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
 }
 
 .roomNamePopup .roomCreation {
