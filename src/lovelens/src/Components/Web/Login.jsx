@@ -29,7 +29,7 @@ export default function Login() {
             console.log(user)
 
             if (user) {
-                axios.post("http://localhost:3000/api/login", 
+                axios.post("http://api.sweet-vows.com/api/login", 
                 JSON.stringify({
                     email: email,
                     password: password
