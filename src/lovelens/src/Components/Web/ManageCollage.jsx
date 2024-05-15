@@ -12,19 +12,19 @@ export default function ManageCollage() {
     //const [isSelected, setIsSelected] = useState(false);
     const [imageData, setImageData] = useState([]);
     const location = useLocation();
-    const rCode = location.search.split("=")[1].split("?")[0];
-    const rName = decodeURI(location.search.split("=")[2]);
+    const rCode = location.search.split('=')[1].split('?')[0];
+    const rName = decodeURI(location.search.split('=')[2]);
     const [imageList, setImageList] = useState([]);
     const selectedImages = [];
 
-    const imagesDict = {}
+    const imagesDict = {};
 
     // const token = "Bearer " + JSON.parse(localStorage.getItem(LOCALSTORAGEKEY.login_details)).accessToken;
     // const uid = JSON.parse(localStorage.getItem(LOCALSTORAGEKEY.login_details)).uid;
 
     const fetchData = async () => {
-        // const api = ("http://localhost:3000/api/room/" + uid).toString();
-        // axios.get(api, 
+        // const api = ("http://18.142.147.231:3000/api/room/" + uid).toString();
+        // axios.get(api,
         // {headers:{
         //     Authorization : token,
         //     "Content-Type" : "application/json"
@@ -37,32 +37,34 @@ export default function ManageCollage() {
         // })
         // .catch((err) => {
         //     console.log(err.message);
-        // });   
+        // });
 
-        const image_api = ("http://localhost:3000/api/image/" + rCode);
-        axios.get(image_api,
-        {headers:{
-            "Content-Type" : "application/json"
-        }})
-        .then(image_res => {
-            const {room} = image_res.data;
-            setImageData(room);
+        const image_api = 'http://18.142.147.231:3000/api/image/' + rCode;
+        axios
+            .get(image_api, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then((image_res) => {
+                const { room } = image_res.data;
+                setImageData(room);
 
-            // if (imageData) {
-            //     imageData.forEach(image => {
-            //         imagesDict[image] = "unselected";
-            //     }); 
+                // if (imageData) {
+                //     imageData.forEach(image => {
+                //         imagesDict[image] = "unselected";
+                //     });
 
-            //     if (imagesDict) {
-            //         console.log(imagesDict);
-            //     }
-            // }
+                //     if (imagesDict) {
+                //         console.log(imagesDict);
+                //     }
+                // }
 
-            console.log("Image Data: " + imageData);
-        })
-        .catch((err) => {
-            console.log(err.message);
-        }); 
+                console.log('Image Data: ' + imageData);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
     };
 
     useEffect(() => {
@@ -72,7 +74,7 @@ export default function ManageCollage() {
     const downloadImage = async () => {
         const zip = new JSZip();
 
-        console.log("Image:" + imageData + "/n");
+        console.log('Image:' + imageData + '/n');
         // Add Images to the zip file
         for (let i = 0; i < imageData.length; i++) {
             const response = await fetch(imageData[i]);
@@ -80,36 +82,40 @@ export default function ManageCollage() {
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            zip.file(rCode + "_" + i + ".png", blob);
+            zip.file(rCode + '_' + i + '.png', blob);
         }
 
         // Generate the zip file
-        const zipData = await zip.generateAsync({type: "blob", streamFiles: true,});
+        const zipData = await zip.generateAsync({
+            type: 'blob',
+            streamFiles: true
+        });
 
         // Create a download link for the zip file
-        const link = document.createElement("a");
+        const link = document.createElement('a');
         link.href = window.URL.createObjectURL(zipData);
-        link.download = "Pictures.zip";
+        link.download = 'Pictures.zip';
         link.click();
-    }
+    };
 
     const selected = (e, index) => {
         e.preventDefault();
-        
+
         var x = document.getElementsByClassName('wedpic');
         var y = document.getElementsByClassName('image');
         //console.log(index);
-        if (imagesDict[index] === "unselected" || imagesDict[index] === undefined) {
+        if (
+            imagesDict[index] === 'unselected' ||
+            imagesDict[index] === undefined
+        ) {
             x[index].style.scale = '95%';
             y[index].style.backgroundColor = '#CC4B54';
             x[index].style.backgroundColor = 'white';
-            imagesDict[index] = "selected";
+            imagesDict[index] = 'selected';
             selectedImages.push(index);
-           
-        }
-        else {
+        } else {
             x[index].style.scale = '100%';
-            imagesDict[index] = "unselected";
+            imagesDict[index] = 'unselected';
             x[index].style.backgroundColor = 'transparent';
             y[index].style.backgroundColor = 'transparent';
             selectedImages.splice(selectedImages.indexOf(index), 1);
@@ -122,12 +128,12 @@ export default function ManageCollage() {
         //     }
         // }
 
-       console.log(selectedImages);
-    }
+        console.log(selectedImages);
+    };
 
     const downloadSelected = (e) => {
         e.preventDefault();
-        console.log("Download Selected: " + selectedImages);
+        console.log('Download Selected: ' + selectedImages);
 
         const downloadSelected = async () => {
             const zip = new JSZip();
@@ -139,25 +145,28 @@ export default function ManageCollage() {
                 const url = window.URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = url;
-                zip.file(rCode + "_" + i + ".png", blob);
+                zip.file(rCode + '_' + i + '.png', blob);
             }
 
             // Generate the zip file
-            const zipData = await zip.generateAsync({type: "blob", streamFiles: true,});
+            const zipData = await zip.generateAsync({
+                type: 'blob',
+                streamFiles: true
+            });
 
             // Create a download link for the zip file
-            const link = document.createElement("a");
+            const link = document.createElement('a');
             link.href = window.URL.createObjectURL(zipData);
-            link.download = "Pictures.zip";
+            link.download = 'Pictures.zip';
             link.click();
-        }
+        };
 
         downloadSelected();
-    }
+    };
 
     const deleteSelected = (e) => {
         e.preventDefault();
-    }
+    };
 
     return (
         <div className="management">
@@ -179,17 +188,39 @@ export default function ManageCollage() {
             <hr></hr>
             <div className="actionsSection">
                 <div className="actionButtons">
-                    <button className="downloadPhotos" onClick={downloadSelected}>Download Selected Photo(s)</button>
-                    <button className="deletePhotos" onClick={deleteSelected}>Delete Selected Photo(s)</button>
+                    <button
+                        className="downloadPhotos"
+                        onClick={downloadSelected}
+                    >
+                        Download Selected Photo(s)
+                    </button>
+                    <button className="deletePhotos" onClick={deleteSelected}>
+                        Delete Selected Photo(s)
+                    </button>
                 </div>
-                <button className="downloadCollage" onClick={downloadImage}>Download Collage</button>
+                <button className="downloadCollage" onClick={downloadImage}>
+                    Download Collage
+                </button>
             </div>
             <div className="contentContainerManage">
                 <div className="photos">
                     {imageData.map((image, index) => (
                         <div className="image">
-                            <img style={{}} className="wedpic" onClick={(e) => selected(e,index)} key={index} src={image} alt="Wedding 1" />
-                            <a href={image} rel="noreferrer" target="_blank"><img className='enlarge' src={enlarge} alt='enlarge'></img></a>
+                            <img
+                                style={{}}
+                                className="wedpic"
+                                onClick={(e) => selected(e, index)}
+                                key={index}
+                                src={image}
+                                alt="Wedding 1"
+                            />
+                            <a href={image} rel="noreferrer" target="_blank">
+                                <img
+                                    className="enlarge"
+                                    src={enlarge}
+                                    alt="enlarge"
+                                ></img>
+                            </a>
                         </div>
                     ))}
                 </div>

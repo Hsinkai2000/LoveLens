@@ -2,7 +2,7 @@ import '../Styles/AdminDashboard.css';
 import NavBar from '../Routes/NavBar';
 import { useState } from 'react';
 import { onAuthStateChangedListener } from '../../utils/firebase.utils.js';
-import axios from "axios";
+import axios from 'axios';
 import { useEffect } from 'react';
 import dateFormat from 'dateformat';
 import { LOCALSTORAGEKEY } from '../../LocalStorageKeys.jsx';
@@ -16,151 +16,178 @@ export default function AdminDashboard() {
     const [delName, setDelName] = useState('');
 
     const enterRoomName = async () => {
-        console.log("enterRoomName")
-        var x = document.getElementsByClassName("roomNamePopup");
-        var y = document.getElementsByClassName("adminDashboardContainer");
-        if (x[0].style.display === "none") {
-            x[0].style.display = "block";
-            y[0].style.filter = "blur(5px)";
+        console.log('enterRoomName');
+        var x = document.getElementsByClassName('roomNamePopup');
+        var y = document.getElementsByClassName('adminDashboardContainer');
+        if (x[0].style.display === 'none') {
+            x[0].style.display = 'block';
+            y[0].style.filter = 'blur(5px)';
         }
     };
 
-    const token = "Bearer " + JSON.parse(localStorage.getItem(LOCALSTORAGEKEY.login_details)).accessToken;
-    const uid = JSON.parse(localStorage.getItem(LOCALSTORAGEKEY.login_details)).uid;
+    const token =
+        'Bearer ' +
+        JSON.parse(localStorage.getItem(LOCALSTORAGEKEY.login_details))
+            .accessToken;
+    const uid = JSON.parse(
+        localStorage.getItem(LOCALSTORAGEKEY.login_details)
+    ).uid;
     //console.log("token: " + token);
     //console.log("uid: " + uid);
 
     const createNewRoom = (e) => {
         e.preventDefault();
-        console.log("createNewRoom")
+        console.log('createNewRoom');
 
         const newRoom = {
-            "roomName": name
+            roomName: name
         };
-        
-        axios.post("http://localhost:3000/api/room/", 
-        JSON.stringify(newRoom),
-        {headers:{
-            Authorization : token,
-            "Content-Type" : "application/json"
-        }})
-        .then((res) => {
-            setName('');
-         })
-         .catch((err) => {
-            console.log(err.message);
-         });     
 
-        var x = document.getElementsByClassName("roomNamePopup");
-        var y = document.getElementsByClassName("adminDashboardContainer");
-        if (x[0].style.display === "block") {
-            x[0].style.display = "none";
-            y[0].style.filter = "none";
+        axios
+            .post(
+                'http://18.142.147.231:3000/api/room/',
+                JSON.stringify(newRoom),
+                {
+                    headers: {
+                        Authorization: token,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            )
+            .then((res) => {
+                setName('');
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+
+        var x = document.getElementsByClassName('roomNamePopup');
+        var y = document.getElementsByClassName('adminDashboardContainer');
+        if (x[0].style.display === 'block') {
+            x[0].style.display = 'none';
+            y[0].style.filter = 'none';
         }
         window.location.reload();
     };
 
     const deleteConfirmation = (e, index) => {
         e.preventDefault();
-        console.log("deleteConfirmation")
+        console.log('deleteConfirmation');
         setIndex(index);
         setDelName(data[index].name);
-        var x = document.getElementsByClassName("confirmDeletePopup");
-        var y = document.getElementsByClassName("adminDashboardContainer");
-        if (x[0].style.display === "none") {
-            x[0].style.display = "block";
-            y[0].style.filter = "blur(5px)";
+        var x = document.getElementsByClassName('confirmDeletePopup');
+        var y = document.getElementsByClassName('adminDashboardContainer');
+        if (x[0].style.display === 'none') {
+            x[0].style.display = 'block';
+            y[0].style.filter = 'blur(5px)';
         }
     };
 
     const deleteRoom = (e, index) => {
         e.preventDefault();
-        console.log("deleteRoom");
-        
-        axios.delete("http://localhost:3000/api/room/",
-        {headers:{
-            Authorization : token,
-            "Content-Type" : "application/json"
-        },
-        data: {
-            "room_code": data[index].room_code
-        }})
-        .then((res) => {
-            console.log(res.data);
-            window.location.reload();
-         })
-         .catch((err) => {
-            console.log(err.message);
-         });
+        console.log('deleteRoom');
+
+        axios
+            .delete('http://18.142.147.231:3000/api/room/', {
+                headers: {
+                    Authorization: token,
+                    'Content-Type': 'application/json'
+                },
+                data: {
+                    room_code: data[index].room_code
+                }
+            })
+            .then((res) => {
+                console.log(res.data);
+                window.location.reload();
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
     };
 
     const cancelCreation = async () => {
-        var x = document.getElementsByClassName("roomNamePopup");
-        var y = document.getElementsByClassName("adminDashboardContainer");
+        var x = document.getElementsByClassName('roomNamePopup');
+        var y = document.getElementsByClassName('adminDashboardContainer');
 
-        if (x[0].style.display === "block") {
-            x[0].style.display = "none";
-            y[0].style.filter = "none";
+        if (x[0].style.display === 'block') {
+            x[0].style.display = 'none';
+            y[0].style.filter = 'none';
         }
     };
 
     const cancelDelete = async () => {
-        var x = document.getElementsByClassName("confirmDeletePopup");
-        var y = document.getElementsByClassName("adminDashboardContainer");
+        var x = document.getElementsByClassName('confirmDeletePopup');
+        var y = document.getElementsByClassName('adminDashboardContainer');
 
-        if (x[0].style.display === "block") {
-            x[0].style.display = "none";
-            y[0].style.filter = "none";
+        if (x[0].style.display === 'block') {
+            x[0].style.display = 'none';
+            y[0].style.filter = 'none';
         }
     };
 
     const fetchData = async () => {
-        const api = ("http://localhost:3000/api/room/" + uid).toString();
-        axios.get(api, 
-        {headers:{
-            Authorization : token,
-            "Content-Type" : "application/json"
-        }})
-        .then(res => {
-            const {rooms} = res.data;
-            setData(rooms);
-        })
-        .catch((err) => {
-            console.log(err.message);
-        });   
+        const api = ('http://18.142.147.231:3000/api/room/' + uid).toString();
+        axios
+            .get(api, {
+                headers: {
+                    Authorization: token,
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then((res) => {
+                const { rooms } = res.data;
+                setData(rooms);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
     };
 
     useEffect(() => {
         fetchData();
     }, []);
-    
 
     return (
         <div>
-            <div style={{display: 'none'}} className='roomNamePopup'>
-                <button className='cancel' onClick={cancelCreation}>X</button>
+            <div style={{ display: 'none' }} className="roomNamePopup">
+                <button className="cancel" onClick={cancelCreation}>
+                    X
+                </button>
                 <label>Enter Room Name:</label>
                 <br></br>
                 <br></br>
                 <br></br>
-                <input onChange={e=>setName(e.target.value)}></input>
+                <input onChange={(e) => setName(e.target.value)}></input>
                 <br></br>
                 <br></br>
                 <br></br>
-                <button className='roomCreation' onClick={createNewRoom}>Create Room</button>
+                <button className="roomCreation" onClick={createNewRoom}>
+                    Create Room
+                </button>
             </div>
-            <div style={{display: 'none'}} className='confirmDeletePopup'>
+            <div style={{ display: 'none' }} className="confirmDeletePopup">
                 <p>Confirm the deletion of room:</p>
                 <p>{delName}?</p>
                 <br></br>
-                <p>Note that after deletion, the room pictures can no longer be retrieved.</p>
+                <p>
+                    Note that after deletion, the room pictures can no longer be
+                    retrieved.
+                </p>
                 <br></br>
-                <div className='confirmationButtons'>
-                    <button className='roomDelete' onClick={(e) => deleteRoom(e, index)}>Confirm</button>
-                    <button className='cancelDelete' onClick={cancelDelete}>Cancel</button>
+                <div className="confirmationButtons">
+                    <button
+                        className="roomDelete"
+                        onClick={(e) => deleteRoom(e, index)}
+                    >
+                        Confirm
+                    </button>
+                    <button className="cancelDelete" onClick={cancelDelete}>
+                        Cancel
+                    </button>
                 </div>
             </div>
-            <div style={{}} className='adminDashboardContainer'>
+            <div style={{}} className="adminDashboardContainer">
                 <NavBar></NavBar>
                 <div className="contentContainerAdmin">
                     <div className="headerSection">
@@ -191,13 +218,40 @@ export default function AdminDashboard() {
                                     <td>{room.name}</td>
                                     <td>{room.room_code}</td>
                                     <td>{room.num_of_pics}</td>
-                                    <td>{dateFormat(room.creation_date, "dd/mm/yyyy")}</td>
+                                    <td>
+                                        {dateFormat(
+                                            room.creation_date,
+                                            'dd/mm/yyyy'
+                                        )}
+                                    </td>
                                     <td className="actions">
-                                        <a href={"/main?room=" + room.room_code} rel="noreferrer" target="_blank">
+                                        <a
+                                            href={
+                                                '/main?room=' + room.room_code
+                                            }
+                                            rel="noreferrer"
+                                            target="_blank"
+                                        >
                                             Start
                                         </a>
-                                        <a href={"/managecollage?room=" + room.room_code + "?name=" + room.name}>Manage</a>
-                                        <button key={index} onClick={(e) => deleteConfirmation(e, index)}>Delete</button>
+                                        <a
+                                            href={
+                                                '/managecollage?room=' +
+                                                room.room_code +
+                                                '?name=' +
+                                                room.name
+                                            }
+                                        >
+                                            Manage
+                                        </a>
+                                        <button
+                                            key={index}
+                                            onClick={(e) =>
+                                                deleteConfirmation(e, index)
+                                            }
+                                        >
+                                            Delete
+                                        </button>
                                     </td>
                                 </tr>
                             ))}
