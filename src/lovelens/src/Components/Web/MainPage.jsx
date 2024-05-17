@@ -35,7 +35,7 @@ export default function MainPage() {
         'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjgwNzhkMGViNzdhMjdlNGUxMGMzMTFmZTcxZDgwM2I5MmY3NjYwZGYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbG92ZWxlbnMtNTM1YmMiLCJhdWQiOiJsb3ZlbGVucy01MzViYyIsImF1dGhfdGltZSI6MTcxMjIxMDMzOSwidXNlcl9pZCI6IlQ5Tkg3dFNEUjloVklEQ09NVzBRVUpYRkFneTEiLCJzdWIiOiJUOU5IN3RTRFI5aFZJRENPTVcwUVVKWEZBZ3kxIiwiaWF0IjoxNzEyMjEwMzM5LCJleHAiOjE3MTIyMTM5MzksImVtYWlsIjoidGVzdGVyMTIzQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0ZXIxMjNAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.OQaFTHRpD5bTkcZh3zHZYNLgp__1y9hEyZpyYKT9VYlMoKoQoy44mthbgjDT-RegO4cxU-FdChMjFZMSlkPfAi2kQcqpAAHpBDfIMbvweWTfADweOe7LrqGEvVnFZ-A00ebTViYe8EQsXJB2U8lv7ZzhgxBeE_B4J_11z4rul29B4NcWBv8nYwaANxU5bFzz9p2MK2W7ng70-b3DAmy_9yX0q2CGTPkhJXcCf1MKEij7G3w9BPdy4GkNLLuEmCLJAh_p_isaMmODGo_IOmGd7Tg2-m49ecgza8Z0-jVcXtdayT-1i6J3RFN9hPF3xM1fpoeI4JP3Q-iLRokMmHKKtg';
 
     const fetchData = async () => {
-        // axios.get("http://api.sweet-vows.com/api/room/T9NH7tSDR9hVIDCOMW0QUJXFAgy1",
+        // axios.get("https://api.sweet-vows.com/api/room/T9NH7tSDR9hVIDCOMW0QUJXFAgy1",
         // {headers:{
         //     Authorization : token,
         //     "Content-Type" : "application/json"
@@ -48,7 +48,7 @@ export default function MainPage() {
         //     console.log(err.message);
         // });
 
-        const image_api = 'http://api.sweet-vows.com/api/image/' + rCode;
+        const image_api = 'https://api.sweet-vows.com/api/image/' + rCode;
         axios
             .get(image_api, {
                 headers: {

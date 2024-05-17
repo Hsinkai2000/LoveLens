@@ -16,7 +16,7 @@ export default function MobileMainPage() {
     // const [crop, setCrop] = useState({ aspect: 16 / 9 });
 
     const fetchData = async () => {
-        const image_api = 'http://api.sweet-vows.com/api/image/' + rCode;
+        const image_api = 'https://api.sweet-vows.com/api/image/' + rCode;
         await axios
             .get(image_api, {
                 headers: {
@@ -43,7 +43,7 @@ export default function MobileMainPage() {
         formData.append('image', event.target.files[0]);
 
         axios
-            .post('http://api.sweet-vows.com/api/image/upload', formData, {
+            .post('https://api.sweet-vows.com/api/image/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
