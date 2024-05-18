@@ -5,20 +5,20 @@ import MainRoutes from './Components/Routes/MainRoutes';
 import MobileRoutes from './Components/Routes/MobileRoutes';
 
 function App() {
-  return (
-    <div className="App">
-      <MobileOnlyView>
-        <BrowserRouter>
-          <MobileRoutes></MobileRoutes>
-        </BrowserRouter>
-      </MobileOnlyView>
-      <BrowserView>
-        <BrowserRouter>
-          <MainRoutes></MainRoutes>
-        </BrowserRouter>
-      </BrowserView>
-    </div>
-  );
+    return (
+        <div className="App">
+            <MobileOnlyView>
+                <BrowserRouter>
+                    <MobileRoutes></MobileRoutes>
+                </BrowserRouter>
+            </MobileOnlyView>
+            <BrowserView>
+                <BrowserRouter>
+                    <MainRoutes></MainRoutes>
+                </BrowserRouter>
+            </BrowserView>
+        </div>
+    );
 }
 
 export default App;

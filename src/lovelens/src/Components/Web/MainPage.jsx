@@ -106,7 +106,8 @@ export default function MainPage() {
                 <div className="joinRoom">
                     <h1>LOVE LENS</h1>
                     <p>
-                        Welcome to Jason's Room, Feel Free to add your pictures!
+                        Welcome to Hsin-Yueh and Yi Cong's Wedding Collage, Feel
+                        Free to add your pictures!
                     </p>
                     <p className="roomCode">Room Code: {rCode}</p>
                     <QRCode

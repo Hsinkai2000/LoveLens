@@ -65,7 +65,8 @@ export default function MobileMainPage() {
                 </div>
                 <div className="welcomeMsg">
                     <p>
-                        Welcome to Room {rCode}, Feel Free to add your pictures!
+                        Welcome to Hsin-Yueh and Yi Cong's Wedding Collage, Feel
+                        Free to add your pictures!
                     </p>
                 </div>
             </div>
