@@ -113,9 +113,7 @@ export default function MainPage() {
                     <QRCode
                         className="qrcode"
                         delay={300}
-                        value={
-                            '18.142.147.231:3001/enterusername?room=' + rCode
-                        }
+                        value={'www.sweet-vows.com/enterusername?room=' + rCode}
                         onError={handleError}
                         onScan={handleScan}
                     />
