@@ -3,15 +3,17 @@ import { NavigationPaths } from './NavigationPaths';
 import Login from '../Web/Login';
 import MainPage from '../Web/MainPage';
 import AdminDashboard from '../Web/AdminDashboard';
-import ManageCollage from "../Web/ManageCollage";
+import ManageCollage from '../Web/ManageCollage';
+import LandingPage from '../Web/LandingPage';
 
 export default function MainRoutes() {
     return (
         <Routes>
             <Route
                 path={NavigationPaths.defaultPath}
-                element={<Login />}
+                element={<LandingPage />}
             ></Route>
+            <Route path={NavigationPaths.loginPath} element={<Login />}></Route>
             <Route
                 path={NavigationPaths.mainPath}
                 element={<MainPage />}

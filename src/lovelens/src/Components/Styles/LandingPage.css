@@ -1,0 +1,80 @@
+.landingPageContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.TopBar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0 20px;
+    z-index: 1;
+}
+
+.sweetvowsicon {
+    width: auto;
+    max-height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.LovelensName {
+    justify-self: flex-end;
+    color: whitesmoke;
+}
+
+.mainimagebackground img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100vw;
+    height: 95vh;
+    object-fit: cover;
+}
+
+.downarrow {
+    z-index: 1;
+    width: 30px;
+    margin: 65vh auto 0 auto;
+}
+
+.ourstory {
+    display: flex;
+    flex-direction: column;
+    margin: 15vh 10px 0 10px;
+}
+
+.weddingplanningimage {
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (min-width: 1000px) {
+
+    .mainimagebackground img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 95vh;
+        object-fit: cover;
+    }
+
+    .ourstory {
+        margin: 15vh 15vw 20px 15vw;
+        flex-direction: row;
+    }
+
+    .weddingplanningimage {
+        width: 40vw;
+        height: auto;
+        object-fit: cover;
+        float: left;
+    }
+
+    .ourstorytext {
+        margin-left: 60px;
+        float: right;
+        align-self: center;
+    }
+}
