@@ -23,7 +23,7 @@ export default function ManageCollage() {
     // const uid = JSON.parse(localStorage.getItem(LOCALSTORAGEKEY.login_details)).uid;
 
     const fetchData = async () => {
-        // const api = ("https://api.sweet-vows.com/api/room/" + uid).toString();
+        // const api = ("http://api.sweet-vows.com/api/room/" + uid).toString();
         // axios.get(api,
         // {headers:{
         //     Authorization : token,
@@ -39,7 +39,7 @@ export default function ManageCollage() {
         //     console.log(err.message);
         // });
 
-        const image_api = 'https://api.sweet-vows.com/api/image/' + rCode;
+        const image_api = 'http://api.sweet-vows.com/api/image/' + rCode;
         axios
             .get(image_api, {
                 headers: {

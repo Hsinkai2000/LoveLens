@@ -34,7 +34,7 @@ export default function Login() {
             if (user) {
                 axios
                     .post(
-                        'https://api.sweet-vows.com/api/login',
+                        'http://api.sweet-vows.com/api/login',
                         JSON.stringify({
                             email: email,
                             password: password
@@ -97,7 +97,7 @@ export default function Login() {
             if (user) {
                 axios
                     .post(
-                        'https://api.sweet-vows.com/api/login',
+                        'http://api.sweet-vows.com/api/login',
                         JSON.stringify({
                             email: email,
                             password: password
