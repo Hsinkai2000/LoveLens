@@ -39,7 +39,7 @@ export default function ManageCollage() {
         //     console.log(err.message);
         // });
 
-        const image_api = 'https://api.sweet-vows.com/api/image/' + rCode;
+        const image_api = process.env.REACT_APP_URL + '/api/image/' + rCode;
         axios
             .get(image_api, {
                 headers: {

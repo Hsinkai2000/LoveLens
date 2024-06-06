@@ -45,7 +45,7 @@ export default function AdminDashboard() {
 
         axios
             .post(
-                'https://api.sweet-vows.com/api/room/',
+                process.env.REACT_APP_URL + '/api/room/',
                 JSON.stringify(newRoom),
                 {
                     headers: {
@@ -88,7 +88,7 @@ export default function AdminDashboard() {
         console.log('deleteRoom');
 
         axios
-            .delete('https://api.sweet-vows.com/api/room/', {
+            .delete(process.env.REACT_APP_URL + '/api/room/', {
                 headers: {
                     Authorization: token,
                     'Content-Type': 'application/json'
@@ -127,7 +127,7 @@ export default function AdminDashboard() {
     };
 
     const fetchData = async () => {
-        const api = ('https://api.sweet-vows.com/api/room/' + uid).toString();
+        const api = (process.env.REACT_APP_URL + '/api/room/' + uid).toString();
         axios
             .get(api, {
                 headers: {

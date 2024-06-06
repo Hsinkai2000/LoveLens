@@ -22,6 +22,8 @@ export default function Login() {
     const { email, password } = fields;
     const navigation = useNavigate();
 
+    console.log("URL" + process.env.REACT_APP_URL );
+
     const signIn = async (event) => {
         console.log('Sign in');
         try {
@@ -34,7 +36,7 @@ export default function Login() {
             if (user) {
                 axios
                     .post(
-                        'https://api.sweet-vows.com/api/login',
+                        process.env.REACT_APP_URL + '/api/login',
                         JSON.stringify({
                             email: email,
                             password: password
@@ -97,7 +99,7 @@ export default function Login() {
             if (user) {
                 axios
                     .post(
-                        'https://api.sweet-vows.com/api/login',
+                        process.env.REACT_APP_URL + '/api/login',
                         JSON.stringify({
                             email: email,
                             password: password
@@ -149,7 +151,27 @@ export default function Login() {
     };
 
     const signInWithGoogle = async () => {
-        await signInWithGooglePopup();
+        try {
+            const { user } = await signInWithGooglePopup();
+            console.log(user);
+
+            if (user) {
+                localStorage.setItem(
+                    LOCALSTORAGEKEY.login_details,
+                    JSON.stringify({
+                        email: email,
+                        uid: user.uid,
+                        accessToken: user.stsTokenManager.accessToken,
+                        displayName: user.providerData[0].displayName
+                    })
+                );
+
+                navigation(NavigationPaths.adminDashboardPath);
+            }
+        }
+        catch(error) {
+            console.log('Message: ' + error.code);
+        }
     };
 
     return (
