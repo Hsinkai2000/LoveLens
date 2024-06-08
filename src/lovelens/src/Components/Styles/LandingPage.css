@@ -1,0 +1,274 @@
+.LandingContainer {
+    background-color: #ECF8FE;
+    font-family: "Kodchasan", sans-serif;
+    overflow-x: hidden;
+}
+
+.aboutCompany {
+    background-color: #F8CDC9;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.LandingContainer  .aboutCompany {
+    display: flex;
+    flex-direction: column;
+}
+
+.LandingContainer  .aboutCompany h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #77252A;
+}
+
+.LandingContainer  .aboutCompany p {
+    text-align: center;
+    color: #77252A;
+}
+
+.LandingContainer  .companyDescription {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+
+.LandingContainer .aboutCompany .descriptionButtons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.LandingContainer .aboutCompany .descriptionButtons .learnMore {
+    width: 180px;
+    border: 1px solid;
+    border-color: #CC4B54;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: #CC4B54
+}
+
+.LandingContainer .aboutCompany .descriptionButtons .signUpLogin {
+    width: 180px;
+    border: none;
+    border-radius: 5px;
+    background-color: #F6F8F0;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    color: #77252A;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2), 0 4px 4px 0 rgba(0,0,0,0.19);
+}
+
+.LandingContainer .vecImg {
+    height: 420px;
+    display: flex;
+    justify-content: center;
+}
+
+.LandingContainer .vecImg img {
+    position: absolute;
+    z-index: 2;
+}
+
+.LandingContainer .vecImg .carpet {
+    background-color: #CC4B54;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    z-index: 1;
+    top: 340px;
+}
+
+.LandingContainer .story {
+    padding-top: 40px;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+}
+
+.LandingContainer .story img {
+    width: 100%;
+    height: 100%;
+}
+
+.LandingContainer .story h3 {
+    text-align: center;
+}
+
+.LandingContainer .lovelensDesc {
+    padding-top: 40px;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    align-items: center;
+}
+
+.LandingContainer .lovelensDesc .descContainer1 {
+    display: none;
+}
+
+.LandingContainer .lovelensDesc img {
+    width: 100%;
+    height: 100%;
+}
+
+.LandingContainer .lovelensDesc h3 {
+    text-align: center;
+}
+
+.LandingContainer .footerMobLand {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.LandingContainer .footerMobLand hr {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.LandingContainer .footerMobLand .contactIcons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.LandingContainer .footerMobLand .contactIcons .phoneIcon {
+    height: 30px;
+    width: 30px;
+    padding-right: 10px;
+}
+
+.LandingContainer .footerMobLand .contactIcons .emailIcon {
+    height: 30px;
+    width: 30px;
+}
+
+.LandingContainer .footerMobLand .contactIcons .igIcon {
+    height: 40px;
+    width: 50px;
+}
+
+@media only screen and (min-width: 992px) {
+
+    .LandingContainer .aboutCompany {
+        width: 100%;
+        min-height: 550px;
+    }
+
+    .LandingContainer .aboutCompany .companyDescription {
+        max-width: 400px;
+        margin-left: 18%;
+        position: absolute;
+        padding-top: 80px;
+    }
+
+    .LandingContainer .aboutCompany .companyDescription h1 {
+        text-align: left;
+        font-size: 52px;
+    } 
+
+    .LandingContainer .aboutCompany .companyDescription p {
+        text-align: left;
+        font-size: 20px
+    } 
+
+    .LandingContainer .aboutCompany .companyDescription .descriptionButtons {
+        display: flex;
+        flex-direction: row;
+        gap:40px;
+    }
+
+    .LandingContainer .vecImg {
+        justify-content: right;
+        padding-top: 80px;
+    }
+
+    .LandingContainer .vecImg img {
+        margin-right: 18%;
+        scale: 150%;
+    }
+
+    .LandingContainer .vecImg .carpet {
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .LandingContainer .story {
+        text-justify: inter-word;
+        padding-top: 80px;
+        padding-left: 150px;
+        padding-right: 150px;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        width: auto;
+        gap: 60px;
+        max-width: 1000px;
+        min-height: 300px;
+        margin: auto;
+    }
+
+    .LandingContainer .story h3 {
+        text-align: left;
+    }
+
+    .LandingContainer .story .storyContent {
+        max-width: 500px;
+    }
+
+    .LandingContainer .lovelensDesc {
+        text-justify: inter-word;
+        padding-top: 20px;
+        padding-left: 150px;
+        padding-right: 150px;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        width: auto;
+        gap: 60px;
+        max-width: 1000px;
+        min-height: 300px;
+        margin: auto;
+    }
+
+    .LandingContainer .lovelensDesc .descContainer1 {
+        display: block;
+        text-align: right;
+        max-width: 500px;
+    }
+
+    .LandingContainer .lovelensDesc .descContainer2 {
+        display: none;
+    }    
+
+    .LandingContainer .lovelensDesc .descContainer1 h3 {
+        text-align: right;
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    .LandingContainer .aboutCompany .companyDescription {
+        margin-left: 22%;
+    }
+
+    .LandingContainer .vecImg img {
+        margin-right: 27%;
+    }
+}

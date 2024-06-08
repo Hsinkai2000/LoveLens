@@ -1,5 +1,4 @@
 import '../Styles/MobileMainPage.css';
-import wedpic from '../../images/wed1.png';
 import tape1 from '../../images/tape.svg';
 import tape2 from '../../images/tape.svg';
 import { useEffect, useState } from 'react';
@@ -16,7 +15,7 @@ export default function MobileMainPage() {
     // const [crop, setCrop] = useState({ aspect: 16 / 9 });
 
     const fetchData = async () => {
-        const image_api = 'https://api.sweet-vows.com/api/image/' + rCode;
+        const image_api = process.env.REACT_APP_URL + '/api/image/' + rCode;
         await axios
             .get(image_api, {
                 headers: {
@@ -43,7 +42,7 @@ export default function MobileMainPage() {
         formData.append('image', event.target.files[0]);
 
         axios
-            .post('https://api.sweet-vows.com/api/image/upload', formData, {
+            .post(process.env.REACT_APP_URL + '/api/image/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

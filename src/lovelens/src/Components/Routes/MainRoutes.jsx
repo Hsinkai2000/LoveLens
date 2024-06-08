@@ -9,7 +9,7 @@ export default function MainRoutes() {
     return (
         <Routes>
             <Route
-                path={NavigationPaths.defaultPath}
+                path={NavigationPaths.loginPath}
                 element={<Login />}
             ></Route>
             <Route
