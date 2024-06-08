@@ -1,6 +1,6 @@
 export const NavigationPaths = {
     //Admin - Web
-    defaultPath: "/",
+    loginPath: "/login",
     registerPath: "/register",
     mainPath: "/main",
     adminDashboardPath: "/admindashboard",
@@ -11,5 +11,8 @@ export const NavigationPaths = {
     enterRoomPath: "/enterroom",
     enterUsernamePath: "/enterusername",
     mobileMainPath: "/mobilemain",
-    inputName: '/inputname'
+    inputName: '/inputname',
+
+    //Both - PC and Mobile
+    landingPath: "/",
 }

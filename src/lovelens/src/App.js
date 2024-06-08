@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import MainRoutes from './Components/Routes/MainRoutes';
 import MobileRoutes from './Components/Routes/MobileRoutes';
+import AllRoutes from './Components/Routes/AllRoutes';
 
 function App() {
     return (
@@ -17,6 +18,9 @@ function App() {
                     <MainRoutes></MainRoutes>
                 </BrowserRouter>
             </BrowserView>
+            <BrowserRouter>
+                <AllRoutes></AllRoutes>
+            </BrowserRouter>
         </div>
     );
 }
