@@ -2,108 +2,102 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    height: 100vh;
 }
 
-.loginSectionContainer {
+.loginPageContainer .contentContainer {
+    align-items: center;
+    color: #77252A;
+    font-family: "Kodchasan", sans-serif;
+}
+
+.loginPageContainer .contentContainer .wedCouple {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.loginPageContainer .contentContainer .wedCouple img {
+    height: 250px;
+}
+
+.loginPageContainer .contentContainer .loginSectionContainer {
     display: flex;
     flex-direction: column;
     color: #77252A;
     font-family: "Kodchasan", sans-serif;
+    padding-bottom: 40px;
 }
 
-.contentContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: #77252A;
-    font-family: "Kodchasan", sans-serif;
-    gap: 180px;
+.loginPageContainer .contentContainer .loginSectionContainer h1 {
+    font-size: 20px;
 }
 
-.loginSectionContainer h1 {
-    font-size: 30px;
-}
-
-.emptyContainer {
-    height: 80px;
-}
-
-.prodName {
+.loginPageContainer .contentContainer .prodName {
     font-weight: bold;
-    font-size: 32px;
+    font-size: 20px;
 }
 
-.loveLens {
+.loginPageContainer .contentContainer .loveLens {
+    display: none;
+}
+
+.loginPageContainer .contentContainer .loveLensTitle {
+    padding-top: 30px;
     text-align: center;
-    height: 80px;
 }
 
-input {
+.loginPageContainer .contentContainer .loginSectionContainer input {
     border: none;
     background: transparent;
     border-bottom: 1px solid #77252A;
     outline: none;
-    font-size: 18px;
+    font-size: 16px;
 }
 
-.loginForm {
+.loginPageContainer .contentContainer .loginSectionContainer .loginForm {
     padding-top: 20px;
     display: flex;
     flex-direction: column;
-    gap:40px;
-    font-size: 18px;
+    gap:30px;
+    font-size: 16px;
     width: 320px;
 }
 
-.emailContainer{
+.loginPageContainer .contentContainer .loginSectionContainer .emailContainer{
     display: flex;
     flex-direction: column;
     height: auto;
     width: auto;
     color: #77252A;
-    gap: 20px;
+    gap: 10px;
 }
 
-.passwordContainer {
+.loginPageContainer .contentContainer .loginSectionContainer .passwordContainer {
     display: flex;
     flex-direction: column;
     height: auto;
     width: auto;
     color: #77252A;
-    gap: 20px;
+    gap: 10px;
 }
 
-.otherLogins {
+.loginPageContainer .contentContainer .loginSectionContainer .otherLogins {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 30px;
 }
 
-.hrContainer {
+.loginPageContainer .contentContainer .loginSectionContainer .otherLogins .hrContainer {
     display: flex;
     align-items: center;
 }
 
-.hrContainer hr { 
+.loginPageContainer .contentContainer .loginSectionContainer .otherLogins .hrContainer hr { 
     width: 50px;
     border: 1px solid #77252A;
 }
 
-.loginButton {
-    font-weight: bold;
-    color: white;
-    background-color: #EDAEC0;
-    border: none;
-    font-family: "Kodchasan", sans-serif;
-    height: 40px;
-    width: 140px;
-    border-radius: 8px;
-}
-
-.googleLoginButton {
+.loginPageContainer .contentContainer .loginSectionContainer .loginButton {
     font-weight: bold;
     color: white;
     background-color: #EDAEC0;
@@ -114,3 +108,80 @@ input {
     border-radius: 8px;
 }
 
+.loginPageContainer .contentContainer .loginSectionContainer .googleLoginButton {
+    font-weight: bold;
+    color: white;
+    background-color: #EDAEC0;
+    border: none;
+    font-family: "Kodchasan", sans-serif;
+    height: 40px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+@media only screen and (min-width: 992px) {
+    .loginPageContainer {
+        position: relative;
+        height: 100vh;
+    }
+
+    .loginPageContainer .contentContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 180px;
+    }
+
+    .loginPageContainer .contentContainer .wedCouple img {
+        height: 450px;
+    }
+
+    .loginPageContainer .contentContainer .loveLensTitle {
+        display: none;
+    }
+
+    .loginPageContainer .contentContainer .loveLens {
+        display: block;
+    }
+
+    .loginPageContainer .contentContainer .loginSectionContainer h1 {
+        font-size: 30px;
+    }
+
+    .emptyContainer {
+        height: 80px;
+    }
+
+    .loginPageContainer .contentContainer .prodName {
+        font-size: 32px;
+    }
+
+    .loginPageContainer .contentContainer .loveLens {
+        text-align: center;
+        height: 80px;
+    }
+
+    .loginPageContainer .contentContainer .loginSectionContainer input {
+        font-size: 18px;
+    }
+
+    .loginPageContainer .contentContainer .loginSectionContainer .loginForm {
+        gap:40px;
+        font-size: 18px;
+    }
+
+    .loginPageContainer .contentContainer .loginSectionContainer .emailContainer{
+        gap: 20px;
+    }
+
+    .loginPageContainer .contentContainer .loginSectionContainer .passwordContainer {
+        gap: 20px;
+    }
+
+    .loginPageContainer .contentContainer .loginSectionContainer .otherLogins {
+        gap: 30px;
+    }
+
+    .loginPageContainer .contentContainer .loginSectionContainer .loginButton {
+        width: 140px;
+    }
+}

@@ -1,7 +1,5 @@
 export const NavigationPaths = {
     //Admin - Web
-    loginPath: "/login",
-    registerPath: "/register",
     mainPath: "/main",
     adminDashboardPath: "/admindashboard",
     manageCollage: "/managecollage",
@@ -15,4 +13,5 @@ export const NavigationPaths = {
 
     //Both - PC and Mobile
     landingPath: "/",
+    loginPath: "/login",
 }

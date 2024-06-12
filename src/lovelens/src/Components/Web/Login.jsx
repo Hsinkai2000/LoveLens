@@ -177,7 +177,10 @@ export default function Login() {
     return (
         <div className="loginPageContainer">
             <div className="contentContainer">
-                <div>
+                <div className="loveLensTitle">
+                    <p className="prodName">LOVE LENS</p>
+                </div>
+                <div className='wedCouple'>
                     <div className="emptyContainer"></div>
                     <img src={weddingpic} alt="Wedding Couple" />
                 </div>
@@ -185,7 +188,7 @@ export default function Login() {
                     <div className="loveLens">
                         <p className="prodName">LOVE LENS</p>
                     </div>
-                    <div className="loginSectionContainer ">
+                    <div className="loginSectionContainer">
                         <h1>LOGIN/SIGN UP</h1>
                         <form className="loginForm" onSubmit={submitHandler}>
                             <div className="emailContainer">
