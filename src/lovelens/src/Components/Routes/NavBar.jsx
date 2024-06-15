@@ -27,7 +27,7 @@ export default function NavBar() {
 
     const logoutHandler = () => {
         signOutUser();
-        navigation(NavigationPaths.defaultPath);
+        navigation(NavigationPaths.landingPath);
     };
 
     return (
@@ -40,7 +40,7 @@ export default function NavBar() {
                         <button
                             key={item.routeName}
                             onClick={() => {
-                                if (item.link === NavigationPaths.defaultPath) {
+                                if (item.link === NavigationPaths.landingPath) {
                                     logoutHandler();
                                 } else {
                                     navigation(
