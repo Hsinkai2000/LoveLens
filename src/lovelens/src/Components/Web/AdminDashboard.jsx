@@ -205,6 +205,62 @@ export default function AdminDashboard() {
                     </div>
                     <hr></hr>
                     <div>
+                        {data.map((room, index) => (
+                            <table className="mRoomTable">
+                                <tr>
+                                    <th>Collage Name</th>
+                                    <td>{room.name}</td>
+                                </tr>
+                                <tr>
+                                    <th>Room Code</th>
+                                    <td>{room.room_code}</td>
+                                </tr>
+                                <tr>
+                                    <th>Number of Images</th>
+                                    <td>{room.num_of_pics}</td>
+                                </tr>
+                                <tr>
+                                    <th>Creation Date</th>
+                                    <td>
+                                        {dateFormat(
+                                            room.creation_date,
+                                            'dd/mm/yyyy'
+                                        )}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th className="actionHeader">Action</th>
+                                    <td className="actions">
+                                        <button
+                                            key={index}
+                                            onClick={(e) =>
+                                                deleteConfirmation(e, index)
+                                            }
+                                        >
+                                            Delete
+                                        </button>
+                                        <a
+                                            href={
+                                                '/managecollage?room=' +
+                                                room.room_code +
+                                                '?name=' +
+                                                room.name
+                                            }
+                                        >
+                                            Manage
+                                        </a>
+                                        <a
+                                            href={
+                                                '/main?room=' + room.room_code
+                                            }
+                                            rel="noreferrer"
+                                            target="_blank"
+                                        >
+                                            Start
+                                        </a>
+                                    </td>
+                                </tr>
+                        </table>))}
                         <table className="roomTable">
                             <tr className="tableHeaders">
                                 <th>Collage Name</th>

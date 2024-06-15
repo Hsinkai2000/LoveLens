@@ -11,7 +11,7 @@ const navigationConfig = [
     },
     {
         routeName: 'Logout',
-        link: NavigationPaths.defaultPath
+        link: NavigationPaths.landingPath
     }
 ];
 

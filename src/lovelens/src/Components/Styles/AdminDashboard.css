@@ -1,41 +1,45 @@
 .contentContainerAdmin {
     color: #77252A;
     font-family: "Kodchasan", sans-serif;
-    padding-left: 40px;
-    padding-top: 10px;
-    padding-right: 100px;
-    height: 100vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    overflow-y: hidden;
 }
 
-.contentContainerAdmin hr {
+.adminDashboardContainer .contentContainerAdmin hr {
     margin-top: 10px;
     width: 100%;
     border: 1px solid #77252A;
 }
 
-.headerSection {
+.adminDashboardContainer .contentContainerAdmin .headerSection {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.descSection span {
-    font-size: 18px;
+.adminDashboardContainer .contentContainerAdmin .headerSection .descSection span {
+    font-size: 14px;
 }
 
-.addSection {
+.adminDashboardContainer .contentContainerAdmin .headerSection .descSection h1 {
+    font-size: 20px;
+}
+
+.adminDashboardContainer .contentContainerAdmin .headerSection .addSection {
     display: flex;
     flex-direction: column;
     padding-right: 20px;
     padding-left: 20px;
 }
 
-.addSection .emptyContainerAdmin{
-    padding-top: 70px;
+.adminDashboardContainer .contentContainerAdmin .headerSection .addSection .emptyContainerAdmin {
+    padding-top: 50px;
 }
 
-.addSection button {
+.adminDashboardContainer .contentContainerAdmin .headerSection .addSection button {
     font-size: 40px;
     font-weight: bold;
     text-decoration: none;
@@ -45,62 +49,10 @@
     cursor: pointer;
 }
 
-.roomTable {
-    width: 100%;
-    text-align: left;
-    font-size: 18px;
-    border-collapse: collapse;
-}
-
-.roomTable .tableHeaders {
-    background-color: #EDAEC0;
-    border-bottom: 0px;
-}
-
-.roomTable tr { 
-    border-bottom: 1px solid #77252A;
-}
-
-.roomTable .actionHeader {
-    text-align: right;
-    padding-right: 20px;
-}
-
-.roomTable .actions {
-    text-align: right;
-    padding-right: 10px;
-}
-
-.roomTable .actions a {
-    color: #77252A;
-    padding-right: 10px;
-}
-
-.roomTable .actions button {
-    color: #77252A;
-    padding-right: 10px;
-    border: none;
-    background-color: transparent;
-    font-size: 18px;
-    font-family: "Kodchasan", sans-serif;
-    text-decoration-line: underline;
-}
-
-.roomTable tr {
-    height: 40px;
-}
-
-.roomTable td {
-    padding-left: 10px;
-}
-
-.roomTable th {
-    padding-left: 10px;
-}
-
 .roomNamePopup {
     color: #77252A;
-    width: 400px;
+    width: 200px;
+    height: 140px;
     text-align: center;
     padding: 40px;
     border-radius: 10px;
@@ -110,15 +62,27 @@
     transform: translate(-50%, 0);
     top: 30%;
     border: 1px solid #77252A;
-    font-size: 24px;
+    font-size: 18px;
     z-index: 100;
+}
+
+.roomNamePopup input {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #77252A;
+    outline: none;
+    font-size: 16px;
 }
 
 .confirmDeletePopup {
     color: #77252A;
-    width: 400px;
+    width: 180px;
+    height: 240px;
     text-align: center;
-    padding: 40px;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
     border-radius: 10px;
     background-color: #EDAEC0;
     position: fixed;
@@ -126,32 +90,32 @@
     transform: translate(-50%, 0);
     top: 30%;
     border: 1px solid #77252A;
-    font-size: 24px;
+    font-size: 16px;
     z-index: 100;
 }
 
 .confirmDeletePopup .roomDelete {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     color: white;
     background-color: #77252A;
     border: none;
     font-family: "Kodchasan", sans-serif;
-    height: 40px;
-    width: 140px;
+    height: 30px;
+    width: 120px;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .confirmDeletePopup .cancelDelete {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     color: white;
     background-color: #CC4B54;
     border: none;
     font-family: "Kodchasan", sans-serif;
-    height: 40px;
-    width: 140px;
+    height: 30px;
+    width: 120px;
     border-radius: 8px;
     cursor: pointer;
 }
@@ -164,16 +128,15 @@
 }
 
 .roomNamePopup .roomCreation {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     color: white;
     background-color: #77252A;
     border: none;
     font-family: "Kodchasan", sans-serif;
-    height: 40px;
-    width: 140px;
+    height: 30px;
+    width: 120px;
     border-radius: 8px;
-    cursor: pointer;
 }
 
 .roomNamePopup .cancel {
@@ -191,7 +154,196 @@
     text-decoration: none;
     border-radius: 50%;
     display: inline-block;
-    font-size: 40px;
+    font-size: 30px;
     margin: 4px 2px;
-    cursor: pointer;
+}
+
+.roomTable {
+    display: none;
+}
+
+.mRoomTable {
+    display: table;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid #77252A;
+    font-size: 14px;
+}
+
+.mRoomTable tr:nth-child(odd) {
+    background-color: pink;
+ }
+
+.mRoomTable tr th {
+    text-align: left;
+    padding-left: 10px;
+ }
+
+.mRoomTable td {
+    padding: 8px;
+    padding-left: 10px;
+}
+
+.adminDashboardContainer .contentContainerAdmin .mRoomTable .actions a {
+    color: #77252A;
+    padding-left: 20px;
+}
+
+.adminDashboardContainer .contentContainerAdmin .mRoomTable .actions button {
+    color: #77252A;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    padding-left: 0px;
+    font-family: "Kodchasan", sans-serif;
+    text-decoration-line: underline;
+}
+
+@media only screen and (min-width: 992px) {
+    .contentContainerAdmin {
+        padding-left: 40px;
+        padding-top: 10px;
+        padding-right: 100px;
+    }
+
+    .adminDashboardContainer .contentContainerAdmin .headerSection .descSection h1 {
+        font-size: 24px;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .headerSection .descSection span {
+        font-size: 18px;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .headerSection .addSection .emptyContainerAdmin{
+        padding-top: 70px;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .roomTable {
+        width: 100%;
+        text-align: left;
+        font-size: 18px;
+        border-collapse: collapse;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .roomTable .tableHeaders {
+        background-color: #EDAEC0;
+        border-bottom: 0px;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .roomTable tr { 
+        border-bottom: 1px solid #77252A;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .roomTable .actionHeader {
+        text-align: right;
+        padding-right: 20px;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .roomTable .actions {
+        text-align: right;
+        padding-right: 10px;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .roomTable .actions a {
+        color: #77252A;
+        padding-right: 10px;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .roomTable .actions button {
+        color: #77252A;
+        padding-right: 10px;
+        border: none;
+        background-color: transparent;
+        font-size: 18px;
+        font-family: "Kodchasan", sans-serif;
+        text-decoration-line: underline;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .roomTable tr {
+        height: 40px;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .roomTable td {
+        padding-left: 10px;
+    }
+    
+    .adminDashboardContainer .contentContainerAdmin .roomTable th {
+        padding-left: 10px;
+    }
+    
+    .roomNamePopup {
+        width: 400px;
+        height: 220px;
+        font-size: 24px;
+    }
+    
+    .confirmDeletePopup {
+        color: #77252A;
+        width: 400px;
+        text-align: center;
+        padding: 40px;
+        border-radius: 10px;
+        background-color: #EDAEC0;
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: 30%;
+        border: 1px solid #77252A;
+        font-size: 24px;
+        z-index: 100;
+    }
+    
+    .confirmDeletePopup .roomDelete {
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: #77252A;
+        border: none;
+        font-family: "Kodchasan", sans-serif;
+        height: 40px;
+        width: 140px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    .confirmDeletePopup .cancelDelete {
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: #CC4B54;
+        border: none;
+        font-family: "Kodchasan", sans-serif;
+        height: 40px;
+        width: 140px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    .confirmDeletePopup .confirmationButtons {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        justify-content: center;
+    }
+    
+    .roomNamePopup .roomCreation {
+        font-size: 16px;
+        height: 40px;
+        width: 140px;
+        cursor: pointer;
+    }
+    
+    .roomNamePopup .cancel {
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    .mRoomTable {
+        display: none;
+    }
+
+    .roomTable {
+        display: table
+    }
 }

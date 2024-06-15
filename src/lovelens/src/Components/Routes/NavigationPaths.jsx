@@ -1,7 +1,6 @@
 export const NavigationPaths = {
     //Admin - Web
     mainPath: "/main",
-    adminDashboardPath: "/admindashboard",
     manageCollage: "/managecollage",
     
 
@@ -14,4 +13,5 @@ export const NavigationPaths = {
     //Both - PC and Mobile
     landingPath: "/",
     loginPath: "/login",
+    adminDashboardPath: "/admindashboard",
 }
