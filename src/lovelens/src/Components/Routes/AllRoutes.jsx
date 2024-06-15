@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { NavigationPaths } from './NavigationPaths';
 import LandingPage from '../LandingPage';
 import Login from '../Web/Login';
+import AdminDashboard from '../Web/AdminDashboard';
 
 export default function AllRoutes() {
     return (
@@ -13,6 +14,10 @@ export default function AllRoutes() {
             <Route
                 path={NavigationPaths.loginPath}
                 element={<Login />}
+            ></Route>
+            <Route
+                path={NavigationPaths.adminDashboardPath}
+                element={<AdminDashboard />}
             ></Route>
         </Routes>
     );

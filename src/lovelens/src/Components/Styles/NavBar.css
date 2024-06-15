@@ -1,24 +1,21 @@
 .navbarContainer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     background-color: #EDAEC0;
     color: #77252A;
-    padding-left: 40px;
-    height: 100px;
+    align-items: center;
+    height: 120px;
     font-family: "Kodchasan", sans-serif;
 }
 
-.navbarOpts {
+.navbarContainer .navbarOpts {
     display: flex;
     flex-direction: row;
-    padding-right: 100px;
-    padding-left: 40px;
-    justify-content: flex-end;
     align-items: center;
-    gap: 40px;
+    gap: 60px;
 }
 
-.navbarOpts button {
+.navbarContainer .navbarOpts button {
     font-size: 16px;
     color: #77252A;
     border: none;
@@ -27,20 +24,45 @@
     cursor: pointer;
 }
 
-.navbarOpts button:hover {
-    text-decoration: underline;
+.navbarContainer .prodName {
+    font-weight: bold;
+    font-size: 24px;
 }
 
-.prodName {
-    font-weight: bold;
-    font-size: 32px;
-}
-
-.welcomeuser {
-    font-weight: bold;
+.navbarContainer .navbarOpts .welcomeuser {
+    display: none;
 }
 
 @font-face {
     font-family: kodchasan;
     src: url("../../fonts/Kodchasan-Regular.ttf");
+}
+
+@media only screen and (min-width: 992px) {
+    .navbarContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 40px;
+        height: 100px;
+    }
+    
+    .navbarContainer .navbarOpts {
+        padding-right: 100px;
+        padding-left: 40px;
+        justify-content: flex-end;
+        gap: 40px;
+    }
+    
+    .navbarContainer .navbarOpts button:hover {
+        text-decoration: underline;
+    }
+    
+    .navbarContainer .prodName {
+        font-size: 32px;
+    }
+    
+    .navbarContainer .navbarOpts .welcomeuser {
+        font-weight: bold;
+        display: block;
+    }
 }

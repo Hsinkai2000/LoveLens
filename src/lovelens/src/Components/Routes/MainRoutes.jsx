@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import { NavigationPaths } from './NavigationPaths';
 import Login from '../Web/Login';
 import MainPage from '../Web/MainPage';
-import AdminDashboard from '../Web/AdminDashboard';
 import ManageCollage from "../Web/ManageCollage";
 
 export default function MainRoutes() {
@@ -15,10 +14,6 @@ export default function MainRoutes() {
             <Route
                 path={NavigationPaths.mainPath}
                 element={<MainPage />}
-            ></Route>
-            <Route
-                path={NavigationPaths.adminDashboardPath}
-                element={<AdminDashboard />}
             ></Route>
             <Route
                 path={NavigationPaths.manageCollage}
