@@ -100,64 +100,137 @@ export default function MainPage() {
         return () => {};
     }, [index]);
 
+    const fileUpload = (event) => {
+        var formData = new FormData();
+
+        formData.append('room_code', rCode);
+        formData.append('image', event.target.files[0]);
+
+        axios
+            .post(process.env.REACT_APP_URL + '/api/image/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+            .then((res) => {
+                console.log('image uploaded');
+                window.location.reload();
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    };
+
     return (
-        <div className="contentContainerMain">
-            <div className="roomDetails">
-                <div className="joinRoom">
-                    <h1>LOVE LENS</h1>
-                    <p>
-                        Welcome to Hsin-Yueh and Yi Cong's Wedding Collage, Feel
-                        Free to add your pictures!
-                    </p>
-                    <p className="roomCode">Room Code: {rCode}</p>
-                    <QRCode
-                        className="qrcode"
-                        delay={300}
-                        value={'sweet-vows.com/enterusername?room=' + rCode}
-                        onError={handleError}
-                        onScan={handleScan}
-                    />
-                    <span>
-                        Get in on the fun!
-                        <br />
-                        Scan the QR code or enter the room code to join now!
-                    </span>
-                </div>
-                <div className="participants">
-                    <p className="participantCount"></p>
-                </div>
-            </div>
-            <div className="photoCont">
-                <div className="slideshowContainer">
-                    <div className="slideshow">
-                        <div
-                            className="slideshowSlider"
-                            style={{
-                                transform: `translate3d(${-index * 100}%, 0, 0)`
-                            }}
-                        >
-                            {[...initialData].reverse().map((image, index) => (
-                                <div className="slide" key={index}>
-                                    <img src={image} alt="slideshow"></img>
-                                </div>
-                            ))}
-                        </div>
+        <div>
+            <div className="mobileMainContainer" style={{}}>
+                <div className="mainHeaderContainer">
+                    <div className="headerLoveLens">
+                        <p className="prodName">LOVE LENS</p>
+                    </div>
+                    <div className="welcomeMsg">
+                        <p>
+                            Welcome to Hsin-Yueh and Yi Cong's Wedding Collage, Feel
+                            Free to add your pictures!
+                        </p>
                     </div>
                 </div>
-                <div className="photoCollage">
-                    {[...imageData].reverse().map((image) => (
-                        <div className="imageBox">
-                            <a href={image} rel="noreferrer" target="_blank">
-                                <img
-                                    className="wedpic"
-                                    src={image}
-                                    alt="Wedding 1"
-                                />
-                            </a>
-                            <img className="tape1" src={tape1} alt="Tape" />
-                            <img className="tape2" src={tape2} alt="Tape" />
+                <div className="mobileMainContent">
+                    <div className="photoList">
+                        {[...imageData].reverse().map((image) => (
+                            <div className="wrapImage">
+                                <div className="imageBox">
+                                    <img
+                                        className="wedpic"
+                                        src={image}
+                                        key={image}
+                                        alt="Wedding 1"
+                                    />
+                                    <img
+                                        className="tape1"
+                                        src={tape1}
+                                        key={{ image } + 't1'}
+                                        alt="Tape"
+                                    />
+                                    <img
+                                        className="tape2"
+                                        src={tape2}
+                                        key={{ image } + 't2'}
+                                        alt="Tape"
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div>
+                    <button className="addPicButton">&#43;</button>
+                    <input
+                        className="chooseFile"
+                        type="file"
+                        accept="image/*"
+                        onChange={fileUpload}
+                    />
+                </div>
+            </div>
+            <div className="contentContainerMain">
+                <div className="roomDetails">
+                    <div className="joinRoom">
+                        <h1>LOVE LENS</h1>
+                        <p>
+                            Welcome to Hsin-Yueh and Yi Cong's Wedding Collage, Feel
+                            Free to add your pictures!
+                        </p>
+                        <p className="roomCode">Room Code: {rCode}</p>
+                        <QRCode
+                            className="qrcode"
+                            delay={300}
+                            value={'sweet-vows.com/enterusername?room=' + rCode}
+                            onError={handleError}
+                            onScan={handleScan}
+                        />
+                        <span>
+                            Get in on the fun!
+                            <br />
+                            Scan the QR code or enter the room code to join now!
+                        </span>
+                    </div>
+                    <div className="participants">
+                        <p className="participantCount"></p>
+                    </div>
+                </div>
+                <div className="photoCont">
+                    <div className="slideshowContainer">
+                        <div className="slideshow">
+                            <div
+                                className="slideshowSlider"
+                                style={{
+                                    transform: `translate3d(${-index * 100}%, 0, 0)`
+                                }}
+                            >
+                                {[...initialData].reverse().map((image, index) => (
+                                    <div className="slide" key={index}>
+                                        <img src={image} alt="slideshow"></img>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    ))}
+                    </div>
+                    <div className="photoCollage">
+                        {[...imageData].reverse().map((image) => (
+                            <div className="imageBox">
+                                <a href={image} rel="noreferrer" target="_blank">
+                                    <img
+                                        className="wedpic"
+                                        src={image}
+                                        alt="Wedding 1"
+                                    />
+                                </a>
+                                <img className="tape1" src={tape1} alt="Tape" />
+                                <img className="tape2" src={tape2} alt="Tape" />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

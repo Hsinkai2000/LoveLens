@@ -3,6 +3,7 @@ import { NavigationPaths } from './NavigationPaths';
 import LandingPage from '../LandingPage';
 import Login from '../Web/Login';
 import AdminDashboard from '../Web/AdminDashboard';
+import MainPage from '../Web/MainPage';
 
 export default function AllRoutes() {
     return (
@@ -18,6 +19,10 @@ export default function AllRoutes() {
             <Route
                 path={NavigationPaths.adminDashboardPath}
                 element={<AdminDashboard />}
+            ></Route>
+            <Route
+                path={NavigationPaths.mainPath}
+                element={<MainPage />}
             ></Route>
         </Routes>
     );
