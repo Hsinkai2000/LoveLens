@@ -11,7 +11,7 @@ export default function EnterUsername() {
     const submitUsername = (e) => {
         e.preventDefault();
         navigation(
-            NavigationPaths.mobileMainPath +
+            NavigationPaths.guestMainPath +
                 '?room=' +
                 rCode +
                 '?username=sdj219048j'

@@ -6,7 +6,7 @@ export const NavigationPaths = {
     //Client - Mobile
     enterRoomPath: "/enterroom",
     enterUsernamePath: "/enterusername",
-    inputName: '/inputname',
+    guestMainPath: "/guestmain",
 
     //Both - PC and Mobile
     landingPath: "/",
