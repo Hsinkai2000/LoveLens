@@ -144,6 +144,19 @@ export default function AdminDashboard() {
             });
     };
 
+    const storeRoomDetails = (e, index) => {
+        //console.log("ENTER");
+        var roomName = data[index].name;
+        //console.log("Name " + roomName);
+
+        localStorage.setItem(
+            LOCALSTORAGEKEY.room_details,
+            JSON.stringify({
+                name: roomName
+            })
+        );
+    }
+
     useEffect(() => {
         fetchData();
     }, []);
@@ -255,6 +268,10 @@ export default function AdminDashboard() {
                                             }
                                             rel="noreferrer"
                                             target="_blank"
+
+                                            onClick={(e) =>
+                                                storeRoomDetails(e, index)
+                                            }
                                         >
                                             Start
                                         </a>
@@ -287,6 +304,10 @@ export default function AdminDashboard() {
                                             }
                                             rel="noreferrer"
                                             target="_blank"
+
+                                            onClick={(e) =>
+                                                storeRoomDetails(e, index)
+                                            }
                                         >
                                             Start
                                         </a>
